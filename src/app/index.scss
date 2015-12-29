@@ -1,0 +1,21 @@
+/* Do not remove the comments below. It's the markers used by wiredep to inject
+   sass dependencies when defined in the bower.json of your dependencies */
+// bower:scss
+// endbower
+
+@import "styles/general/mixins";
+@import "styles/general/reset";
+@import "styles/general/animate";
+
+@import "styles/general/typography";
+@import "styles/general/common";
+@import "styles/general/general";
+
+@import "styles/common/header";
+
+@import "styles/event/event.major.preview";
+
+/* Do not remove the comments below. It's the markers used by gulp-inject to inject
+   all your sass files automatically */
+// BOOPinjector
+// BOOPendinjector

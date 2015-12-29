@@ -1,0 +1,33 @@
+
+.event-major-preview {
+}
+
+  .event-major-preview__display {
+    background-color: #EEF3F7;
+    height: 700px; // temp
+  }
+
+  .event-major-preview__cards {
+    @extend .clearfix;
+
+    padding: 20px 0;
+    background-color: #CCD7E0;
+  }
+
+.event-major-preview-card {
+  @include border-radius(12px);
+
+  height: 172px;
+  width: 270px;
+
+  background-color: #9BABC3;
+
+  margin-right: 20px;
+
+  float: left;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+}
