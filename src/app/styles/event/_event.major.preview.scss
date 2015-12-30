@@ -1,33 +1,147 @@
 
 .event-major-preview {
+  position: relative;
 }
 
   .event-major-preview__display {
+    @extend .img-cover;
+
     background-color: #EEF3F7;
+    color: #ffffff;
     height: 700px; // temp
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .underlay {
+      @extend %underlay;
+    }
+
+    .content {
+      position: relative;
+      text-align: center;
+    }
+
+    h3 {
+      @extend %text-shadow;
+
+      font-weight: bold;
+      font-size: 78px;
+      line-height: 78px;
+    }
+
+    h4 {
+      @extend %text-shadow;
+
+      font-size: 42px;
+      line-height: 42px;
+      margin: 24px 0;
+    }
+
   }
 
   .event-major-preview__cards {
     @extend .clearfix;
 
     padding: 20px 0;
-    background-color: #CCD7E0;
+    background-color: #13171B;
   }
 
-.event-major-preview-card {
-  @include border-radius(12px);
+$event-major-preview-card-height: 172px;
 
-  height: 172px;
+.event-major-preview-card {
+  @extend .img-cover;
+
+  @include border-radius(12px);
+  @include transition(transform 250ms ease);
+
+  height: $event-major-preview-card-height;
   width: 270px;
 
   background-color: #9BABC3;
+  color: #ffffff;
+
+  cursor: pointer;
 
   margin-right: 20px;
 
   float: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 
   &:last-of-type {
     margin-right: 0;
   }
 
+  &.state--selected {
+    transform: scale(1.11);
+
+    .event-major-preview-card__details {
+      transform: translate(0, 0);
+    }
+
+    .event-major-preview-card__title {
+      transform: translate(0, $event-major-preview-card-height);
+    }
+
+  }
+
+  .underlay {
+    @extend %underlay;
+  }
+
 }
+
+$offsets: 15px;
+
+  .event-major-preview-card__details {
+    @include transition(transform 250ms ease);
+
+    position: absolute;
+    top: $offsets;
+    left: $offsets;
+    right: $offsets;
+
+    @extend %text-shadow;
+
+    transform: translate(0, -$event-major-preview-card-height);
+
+    h3 {
+      @extend %heading-medium--sml;
+
+      margin-bottom: 2px;
+    }
+
+    p {
+      line-height: 1.5em;
+    }
+
+  }
+
+  .event-major-preview-card__title {
+    @include transition(transform 250ms ease);
+    @extend %heading-medium;
+    @extend %text-shadow;
+
+    position: relative;
+  }
+
+  .event-major-preview-card__time,
+  .event-major-preview-card__follow {
+    position: absolute;
+    bottom: $offsets;
+  }
+
+  .event-major-preview-card__time {
+    left: $offsets;
+  }
+
+  .event-major-preview-card__follow {
+    right: $offsets;
+  }

@@ -3,23 +3,20 @@
     <header class="site-header">
       SITE HEADER
     </header>
-    <section class="event-major-preview__display">
-      EVENT PREVIEW
+    <section class="event-major-preview__display" style="background-image:url(/assets/images/placeholder/event-2.jpg);">
+      <div class="underlay"></div>
+      <div class="content">
+        <h3>03:53:25</h3>
+        <h4>Hong Kong 2016 Trip</h4>
+        <button class="btn btn--main">Follow</button>
+      </div>
     </section>
     <section class="event-major-preview__cards">
       <div class="site-maxwidth">
-        <div class="event-major-preview-card">
-          CARD FOR THE EVENT PREVIEW
-        </div>
-        <div class="event-major-preview-card">
-          CARD FOR THE EVENT PREVIEW
-        </div>
-        <div class="event-major-preview-card">
-          CARD FOR THE EVENT PREVIEW
-        </div>
-        <div class="event-major-preview-card">
-          CARD FOR THE EVENT PREVIEW
-        </div>
+        <event-preview-card style="background-image:url(/assets/images/placeholder/event-1.jpg);"></event-preview-card>
+        <event-preview-card class="state--selected" style="background-image:url(/assets/images/placeholder/event-2.jpg);"></event-preview-card>
+        <event-preview-card style="background-image:url(/assets/images/placeholder/event-3.jpg);"></event-preview-card>
+        <event-preview-card style="background-image:url(/assets/images/placeholder/event-4.jpg);"></event-preview-card>
       </div>
     </section>
   </section>
