@@ -8,9 +8,10 @@
 
     background-color: #EEF3F7;
     color: #ffffff;
-    height: 700px; // temp
 
     position: relative;
+    width: 100%;
+    height: 100%;
 
     display: flex;
     justify-content: center;
@@ -30,15 +31,15 @@
 
       font-weight: bold;
       font-size: 78px;
-      line-height: 78px;
+      line-height: 64px;
     }
 
     h4 {
       @extend %text-shadow;
 
       font-size: 42px;
-      line-height: 42px;
-      margin: 24px 0;
+      line-height: 50px;
+      margin: 24px 0 30px 0;
     }
 
   }
@@ -56,7 +57,7 @@ $event-major-preview-card-height: 172px;
   @extend .img-cover;
 
   @include border-radius(12px);
-  @include transition(transform 250ms ease);
+  @include transition(transform 400ms ease);
 
   height: $event-major-preview-card-height;
   width: 270px;
@@ -101,7 +102,7 @@ $event-major-preview-card-height: 172px;
 $offsets: 15px;
 
   .event-major-preview-card__details {
-    @include transition(transform 250ms ease);
+    @include transition(transform 400ms ease);
 
     position: absolute;
     top: $offsets;
@@ -125,7 +126,7 @@ $offsets: 15px;
   }
 
   .event-major-preview-card__title {
-    @include transition(transform 250ms ease);
+    @include transition(transform 400ms ease);
     @extend %heading-medium;
     @extend %text-shadow;
 
@@ -140,8 +141,12 @@ $offsets: 15px;
 
   .event-major-preview-card__time {
     left: $offsets;
+
+    font-size: 14px;
+    font-weight: bold;
   }
 
   .event-major-preview-card__follow {
-    right: $offsets;
+    right: $offsets - 5px;
+    bottom: $offsets - 5px;
   }

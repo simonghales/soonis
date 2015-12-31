@@ -1,0 +1,52 @@
+%btn-reset {
+  @extend %font--default;
+
+  border: 0;
+  padding: 0;
+  background: none;
+  font-size: 1em;
+
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+.btn {
+  @extend %btn-reset;
+}
+
+.btn--main {
+  @include border-radius(25px);
+
+  background-color: #0087FF;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 12px 22px;
+
+  text-transform: uppercase;
+
+  &.btn--main--mini {
+    font-size: 12px;
+    padding: 5px 12px 6px 12px;
+
+    .icon {
+      margin-left: 1px;
+      font-size: 14px;
+    }
+
+  }
+
+  .icon {
+    margin-left: 3px;
+    font-size: 22px;
+
+    &::before {
+      margin: 0;
+    }
+
+  }
+
+}

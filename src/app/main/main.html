@@ -1,26 +1,93 @@
 <section class="page">
   <section class="event-major-preview">
-    <header class="site-header">
-      SITE HEADER
-    </header>
-    <section class="event-major-preview__display" style="background-image:url(/assets/images/placeholder/event-2.jpg);">
-      <div class="underlay"></div>
-      <div class="content">
-        <h3>03:53:25</h3>
-        <h4>Hong Kong 2016 Trip</h4>
-        <button class="btn btn--main">Follow</button>
+    <site-header></site-header>
+    <div class="slider-wrapper" preview-slider current-slide="{{mainVM.slide}}">
+      <div class="slide">
+        <section class="event-major-preview__display"
+                 style="background-image:url(/assets/images/placeholder/event-1.jpg);">
+          <div class="underlay"></div>
+          <div class="content">
+            <h3>03:53:25</h3>
+            <h4>Some Event</h4>
+            <button class="btn btn--main">
+              Follow
+              <span class="icon icon-star-empty"></span>
+            </button>
+          </div>
+        </section>
+      </div><div class="slide">
+        <section class="event-major-preview__display"
+                 style="background-image:url(/assets/images/placeholder/event-2.jpg);">
+          <div class="underlay"></div>
+          <div class="content">
+            <h3>03:53:25</h3>
+            <h4>Hong Kong 2016 Trip</h4>
+            <button class="btn btn--main">
+              Follow
+              <span class="icon icon-star-empty"></span>
+            </button>
+          </div>
+        </section>
+      </div><div class="slide">
+        <section class="event-major-preview__display"
+                 style="background-image:url(/assets/images/placeholder/event-3.jpg);">
+          <div class="underlay"></div>
+          <div class="content">
+            <h3>03:53:25</h3>
+            <h4>Hong Kong 2016 Trip</h4>
+            <button class="btn btn--main">
+              Follow
+              <span class="icon icon-star-empty"></span>
+            </button>
+          </div>
+        </section>
+      </div><div class="slide">
+        <section class="event-major-preview__display"
+                 style="background-image:url(/assets/images/placeholder/event-4.jpg);">
+          <div class="underlay"></div>
+          <div class="content">
+            <h3>03:53:25</h3>
+            <h4>Hong Kong 2016 Trip</h4>
+            <button class="btn btn--main">
+              Follow
+              <span class="icon icon-star-empty"></span>
+            </button>
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
     <section class="event-major-preview__cards">
       <div class="site-maxwidth">
-        <event-preview-card style="background-image:url(/assets/images/placeholder/event-1.jpg);"></event-preview-card>
-        <event-preview-card class="state--selected" style="background-image:url(/assets/images/placeholder/event-2.jpg);"></event-preview-card>
-        <event-preview-card style="background-image:url(/assets/images/placeholder/event-3.jpg);"></event-preview-card>
-        <event-preview-card style="background-image:url(/assets/images/placeholder/event-4.jpg);"></event-preview-card>
+        <event-preview-card ng-click="mainVM.changeSlide(0);"
+                            ng-class="{
+                              'state--selected': mainVM.slide === 0
+                            }"
+                            style="background-image:url(/assets/images/placeholder/event-1.jpg);"></event-preview-card>
+        <event-preview-card ng-click="mainVM.changeSlide(1);"
+                            ng-class="{
+                              'state--selected': mainVM.slide === 1
+                            }"
+                            style="background-image:url(/assets/images/placeholder/event-2.jpg);"></event-preview-card>
+        <event-preview-card ng-click="mainVM.changeSlide(2);"
+                            ng-class="{
+                              'state--selected': mainVM.slide === 2
+                            }"
+                            style="background-image:url(/assets/images/placeholder/event-3.jpg);"></event-preview-card>
+        <event-preview-card ng-click="mainVM.changeSlide(3);"
+                            ng-class="{
+                              'state--selected': mainVM.slide === 3
+                            }"
+                            style="background-image:url(/assets/images/placeholder/event-4.jpg);"></event-preview-card>
       </div>
     </section>
   </section>
   <section>
     HOME BODY
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    boop
   </section>
 </section>

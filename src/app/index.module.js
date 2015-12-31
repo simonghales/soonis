@@ -4,6 +4,7 @@
   angular
     .module('soonis', [
 
+                      'soonis.general',
                       'soonis.event',
 
                       'ngAnimate',

@@ -1,4 +1,12 @@
 
+%font--default {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+%font--heading {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
 body {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -6,7 +14,7 @@ body {
 }
 
 .font--heading {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  @extend %font--heading;
 }
 
 %text-shadow {

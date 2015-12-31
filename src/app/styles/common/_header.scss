@@ -1,7 +1,92 @@
+
+$site-header__offset: 15px;
+
 .site-header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+
+  .top-left {
+    position: absolute;
+    top: $site-header__offset + 3px;
+    left: $site-header__offset;
+  }
+
+  .top-right {
+    position: absolute;
+    top: $site-header__offset;
+    right: $site-header__offset;
+  }
+
 }
+
+.site-logo {
+  @extend .clearfix;
+
+  cursor: pointer;
+}
+
+  .site-logo__icon {
+    @include border-radius(50%);
+
+    float: left;
+
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+
+    margin-right: 8px;
+  }
+
+  .site-logo__title {
+    float: left;
+
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 17px;
+
+    span {
+      font-weight: bold;
+    }
+
+  }
+
+.user-fixed {
+  @extend .clearfix;
+}
+
+  .user-fixed__notifications,
+  .user-fixed__thumb {
+    float: left;
+  }
+
+  .user-fixed__notifications {
+    @include border-radius(50%);
+
+    width: 28px;
+    height: 28px;
+    background-color: #FF094B;
+    color: #ffffff;
+    cursor: pointer;
+
+    text-align: center;
+    line-height: 28px;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+
+  .user-fixed__thumb {
+    @extend .img-cover;
+
+    @include border-radius(50%);
+
+    width: 48px;
+    height: 48px;
+
+    background-color: #ffffff;
+    cursor: pointer;
+    margin-left: 12px;
+  }
