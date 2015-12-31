@@ -10,6 +10,7 @@
     var vm = this;
 
     vm.slide = 0;
+    vm.userAction = false;
 
     vm.changeSlide = changeSlide;
 
@@ -19,6 +20,7 @@
     }
 
     function changeSlide(index) {
+      vm.userAction = true;
       vm.slide = index;
     }
 

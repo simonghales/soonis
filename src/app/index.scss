@@ -16,7 +16,11 @@
 
 @import "styles/common/header";
 
+@import "styles/pages/main";
+
 @import "styles/event/event.major.preview";
+@import "styles/event/events.category";
+@import "styles/event/event.card";
 
 /* Do not remove the comments below. It's the markers used by gulp-inject to inject
    all your sass files automatically */

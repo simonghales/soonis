@@ -5,11 +5,14 @@
     .module('soonis.general.directives')
     .directive('previewSlider', previewSlider);
 
-  function previewSlider($log) {
+  function previewSlider($log, $interval) {
 
     var directive = {
       restrict: 'A',
-      scope: false,
+      scope: {
+        currentSlide: '=',
+        userAction: '='
+      },
       link: link
     }
 
@@ -17,14 +20,35 @@
 
     function link(scope, element, attrs) {
 
+      var duration = 10000;
+      var maxSlides = 4;
+      var intervalPromise;
+
       $log.debug("Preview slider initiated");
 
-      attrs.$observe('currentSlide', function () {
-        _changeSlide();
-      });
+      _activate();
+
+      function _activate() {
+        scope.$watch('currentSlide', function () {
+          _changeSlide();
+        });
+        _initInterval();
+      }
+
+      function _initInterval() {
+        intervalPromise = $interval(_incrementSlide, duration);
+      }
+
+      function _incrementSlide() {
+         if (scope.currentSlide + 1 !== maxSlides) {
+           scope.currentSlide = scope.currentSlide + 1;
+         } else {
+           scope.currentSlide = 0;
+         }
+      }
 
       function _changeSlide() {
-        var offset = attrs.currentSlide * 100;
+        var offset = scope.currentSlide * 100;
 
         element.css({
           '-webkit-transform' : 'translate3d(-' + offset + '%, 0, 0)',
@@ -32,6 +56,10 @@
           '-ms-transform' : 'translate3d(-' + offset + '%, 0, 0)',
           'transform' : 'translate3d(-' + offset + '%, 0, 0)'
         });
+
+        if(scope.userAction) {
+          $interval.cancel(intervalPromise);
+        }
 
       }
 

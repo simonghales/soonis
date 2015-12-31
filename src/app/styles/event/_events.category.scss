@@ -1,0 +1,43 @@
+.events-category {}
+
+  .events-category__header {
+    @extend .clearfix;
+
+    color: #3C5E7D;
+    padding: 0 14px 14px 14px;
+    border-bottom: 1px solid #EBEFF3;
+
+    font-size: 15px;
+  }
+
+    .events-category__header__title {
+      text-transform: uppercase;
+      float: left;
+
+      span {
+        font-weight: bold;
+      }
+
+    }
+
+    .events-category__header__link {
+      color: #A0BAD2;
+      float: right;
+    }
+
+  .events-category__list {
+    @extend .clearfix;
+
+    margin-top: 20px;
+
+    > li {
+      float: left;
+      margin-right: 20px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+    }
+
+  }

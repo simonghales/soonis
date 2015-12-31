@@ -34,3 +34,12 @@ body {
   line-height: 14px;
   font-weight: bold;
 }
+
+a {
+  color: inherit;
+
+  &[ng-click] {
+    cursor: pointer;
+  }
+
+}
