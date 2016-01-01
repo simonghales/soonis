@@ -1,0 +1,47 @@
+
+
+.notification {
+  @extend .clearfix;
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $clr-medblue;
+  }
+
+  &:active {
+
+    .notification__thumb {
+      transform: scale(1.05);
+    }
+
+  }
+
+}
+
+  .notification__thumb {
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-right: 5px;
+    @include transition(transform 250ms ease);
+
+    img {
+      @include border-radius(3px);
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+  .notification__info {
+    overflow: hidden;
+    font-size: 13px;
+    color: $clr-dark;
+
+    .when {
+      color: $clr-light;
+      font-size: 12px;
+    }
+
+  }

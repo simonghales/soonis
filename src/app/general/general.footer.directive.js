@@ -3,15 +3,13 @@
 
   angular
     .module('soonis.general.directives')
-    .directive('siteHeader', siteHeader);
+    .directive('siteFooter', siteFooter);
 
-  function siteHeader($log) {
+  function siteFooter($log) {
 
     var directive = {
       restrict: 'E',
-      controller: 'HeaderController',
-      controllerAs: 'headerVM',
-      templateUrl: 'app/general/_header.html',
+      templateUrl: 'app/general/_footer.html',
       replace: true,
       scope: false,
     }

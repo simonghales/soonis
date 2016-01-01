@@ -3,15 +3,13 @@
 
   angular
     .module('soonis.general.directives')
-    .directive('siteHeader', siteHeader);
+    .directive('notification', notification);
 
-  function siteHeader($log) {
+  function notification($log) {
 
     var directive = {
       restrict: 'E',
-      controller: 'HeaderController',
-      controllerAs: 'headerVM',
-      templateUrl: 'app/general/_header.html',
+      templateUrl: 'app/general/_notification.html',
       replace: true,
       scope: false,
     }

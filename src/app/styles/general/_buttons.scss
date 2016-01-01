@@ -21,7 +21,7 @@
 .btn--main {
   @include border-radius(25px);
 
-  background-color: #0087FF;
+  background-color: $clr-primary;
   color: #ffffff;
   font-size: 20px;
   padding: 12px 22px;
@@ -49,4 +49,57 @@
 
   }
 
+}
+
+.btn--plain {
+  color: $clr-light;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &.btn--plain--highlightable {
+    @include transition(transform 250ms ease);
+
+    &:hover {
+      color: $clr-primary;
+      transform: scale(1.1);
+    }
+
+  }
+
+  .icon {
+    margin-left: 1px;
+    font-size: 14px;
+
+    &::before {
+      margin: 0;
+    }
+
+  }
+
+}
+
+.btn--big {
+  @include border-radius(5px);
+
+  display: block;
+  background-color: $clr-primary;
+  color: #ffffff;
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.btn--med-plain {
+  color: $clr-dark;
+  font-size: 16px;
+  padding: 14px 18px;
+}
+
+.btn--med-round {
+  @extend .btn--med-plain;
+  @include border-radius(25px);
+
+  padding: 12px 16px;
+  border: 2px solid black;
 }

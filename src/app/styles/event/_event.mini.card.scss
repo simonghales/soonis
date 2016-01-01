@@ -1,0 +1,35 @@
+.event-mini-card {
+  @extend .clearfix;
+}
+
+  .event-mini-card__thumb {
+    float: left;
+    width: 58px;
+    height: 58px;
+    margin-right: 10px;
+
+    img {
+      @include border-radius(5px);
+
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+  .event-mini-card__details {
+    overflow: hidden;
+  }
+
+    .event-mini-card__title {
+      @extend %text-truncate;
+
+      color: $clr-dark;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 15px 0 3px 0;
+    }
+
+    .event-mini-card__when {
+      color: $clr-medium;
+    }

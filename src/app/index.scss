@@ -7,6 +7,9 @@
 @import "styles/general/reset";
 @import "styles/general/animate";
 
+@import "styles/general/variables";
+@import "styles/general/colours";
+
 @import "styles/general/typography";
 @import "styles/general/common";
 @import "styles/general/general";
@@ -15,12 +18,15 @@
 @import "styles/components/slider";
 
 @import "styles/common/header";
+@import "styles/common/notifications";
+@import "styles/common/footer";
 
 @import "styles/pages/main";
 
 @import "styles/event/event.major.preview";
 @import "styles/event/events.category";
 @import "styles/event/event.card";
+@import "styles/event/event.mini.card";
 
 /* Do not remove the comments below. It's the markers used by gulp-inject to inject
    all your sass files automatically */

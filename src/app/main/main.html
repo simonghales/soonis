@@ -6,15 +6,12 @@
   <section class="main-body">
     <div class="site-maxwidth">
       <div class="main-body__top">
-        <section class="events-category">
-          <header class="events-category__header">
-            <h3 class="events-category__header__title">Soon in <span>Space</span></h3>
-            <a class="events-category__header__link" ng-click>SEE ALL</a>
+        <section class="events-category general-category col-3">
+          <header class="general-category__header">
+            <h3 class="general-category__header__title">Soon in <span>Space</span></h3>
+            <a class="general-category__header__link" ng-click>SEE ALL</a>
           </header>
-          <ul class="events-category__list">
-            <li>
-              <event-card></event-card>
-            </li>
+          <ul class="general-category__list">
             <li>
               <event-card></event-card>
             </li>
@@ -26,21 +23,74 @@
             </li>
           </ul>
         </section>
-        <aside>
-          EVENT, FOLLOWING
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          ETC
+        <aside class="main-aside general-category">
+          <button class="btn btn--big">
+            NEW EVENT
+          </button>
+          <header class="general-category__header">
+            <h3 class="general-category__header__title"><span>Following</span></h3>
+            <a class="general-category__header__link" ng-click>SEE ALL</a>
+          </header>
+          <ul class="general-category__list-vertical">
+            <li>
+              <event-mini-card></event-mini-card>
+            </li>
+            <li>
+              <event-mini-card></event-mini-card>
+            </li>
+            <li>
+              <event-mini-card></event-mini-card>
+            </li>
+            <li>
+              <event-mini-card></event-mini-card>
+            </li>
+            <li>
+              <event-mini-card></event-mini-card>
+            </li>
+          </ul>
         </aside>
       </div>
+      <section class="events-category general-category">
+        <header class="general-category__header">
+          <h3 class="general-category__header__title">Soon in <span>Space</span></h3>
+          <a class="general-category__header__link" ng-click>SEE ALL</a>
+        </header>
+        <ul class="general-category__list">
+          <li>
+            <event-card></event-card>
+          </li>
+          <li>
+            <event-card></event-card>
+          </li>
+          <li>
+            <event-card></event-card>
+          </li>
+          <li>
+            <event-card></event-card>
+          </li>
+        </ul>
+      </section>
+      <section class="events-category general-category">
+        <header class="general-category__header">
+          <h3 class="general-category__header__title">Soon in <span>Space</span></h3>
+          <a class="general-category__header__link" ng-click>SEE ALL</a>
+        </header>
+        <ul class="general-category__list">
+          <li>
+            <event-card></event-card>
+          </li>
+          <li>
+            <event-card></event-card>
+          </li>
+          <li>
+            <event-card></event-card>
+          </li>
+          <li>
+            <event-card></event-card>
+          </li>
+        </ul>
+      </section>
     </div>
   </section>
+  <site-footer></site-footer>
 </section>

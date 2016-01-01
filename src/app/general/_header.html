@@ -3,8 +3,73 @@
     <div class="site-logo__icon"></div>
     <h2 class="site-logo__title"><span>soon</span>.is</h2>
   </div>
-  <div class="user-fixed top-right">
-    <div class="user-fixed__notifications">3</div>
-    <div class="user-fixed__thumb" style="background-image:url(/assets/images/placeholder/me.jpg);"></div>
+  <div class="user-fixed top-right" ng-controller="NotificationsController as notiVM">
+    <div ng-class="{
+          'state--open': notiVM.states.notificationsOpen
+         }"
+         class="user-fixed__notifications-wrapper">
+      <div ng-show="notiVM.states.notificationsOpen"
+           class="user-fixed__notifications__dropdown">
+        <header>
+          <h3>NOTIFICATIONS</h3>
+        </header>
+        <ul class="notifications-list">
+          <li>
+            <notification></notification>
+          </li>
+          <li>
+            <notification></notification>
+          </li>
+          <li>
+            <notification></notification>
+          </li>
+          <li>
+            <notification></notification>
+          </li>
+          <li>
+            <notification></notification>
+          </li>
+        </ul>
+      </div>
+      <div ng-click="notiVM.toggleNotifications();"
+           class="user-fixed__notifications">
+        <span class="count">3</span>
+        <span class="icon icon-cancel"></span>
+      </div>
+    </div>
+    <div ng-class="{
+          'state--open': headerVM.states.userOpen
+         }" class="user-fixed__thumb-wrapper">
+      <div ng-show="headerVM.states.userOpen"
+           class="user-fixed__thumb__dropdown rounded-dropdown">
+        <header class="rounded-dropdown__header">
+          <h3>Simon Hales</h3>
+          <p>view profile</p>
+        </header>
+        <ul class="rounded-dropdown__list">
+          <li>
+            <a>
+              Settings
+            </a>
+          </li>
+          <li>
+            <a>
+              About
+            </a>
+          </li>
+          <li>
+            <a>
+              Sign Out
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div ng-click="headerVM.toggleUser();"
+           class="user-fixed__thumb">
+        <div class="image"
+             style="background-image:url(/assets/images/placeholder/me2.jpg);"></div>
+        <!--<div class="icon icon-cancel"></div>-->
+      </div>
+    </div>
   </div>
 </header>

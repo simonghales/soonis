@@ -1,16 +1,22 @@
-.events-category {}
+.general-category {
 
-  .events-category__header {
+  &.col-3 {
+    width: ($event-card-width * 3) + (20px * 2);
+  }
+
+}
+
+  .general-category__header {
     @extend .clearfix;
 
-    color: #3C5E7D;
+    color: $clr-dark;
     padding: 0 14px 14px 14px;
-    border-bottom: 1px solid #EBEFF3;
+    border-bottom: 1px solid $clr-cream;
 
     font-size: 15px;
   }
 
-    .events-category__header__title {
+    .general-category__header__title {
       text-transform: uppercase;
       float: left;
 
@@ -20,12 +26,17 @@
 
     }
 
-    .events-category__header__link {
-      color: #A0BAD2;
+    .general-category__header__link {
+      color: #70879C;
       float: right;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
     }
 
-  .events-category__list {
+  .general-category__list {
     @extend .clearfix;
 
     margin-top: 20px;
@@ -38,6 +49,15 @@
         margin-right: 0;
       }
 
+    }
+
+  }
+
+  .general-category__list-vertical {
+    margin-top: 10px;
+
+    > li {
+      margin-top: 10px;
     }
 
   }

@@ -1,9 +1,25 @@
 
+@mixin lines-truncate($lineheight, $linecount) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: $lineheight;                  /* fallback */
+  max-height: $lineheight * $linecount;      /* fallback */
+  -webkit-line-clamp: $linecount;            /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
 @mixin placeholder {
   &::-webkit-input-placeholder {@content}
   &:-moz-placeholder           {@content}
   &::-moz-placeholder          {@content}
   &:-ms-input-placeholder      {@content}
+}
+
+%text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @mixin text-truncate {

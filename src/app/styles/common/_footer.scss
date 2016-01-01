@@ -1,0 +1,33 @@
+.site-footer {
+  padding: 120px 0;
+  background-color: $clr-lightcream;
+  text-align: center;
+}
+
+.site-footer__main {
+
+  .btn {
+    margin: 0 5px;
+  }
+
+}
+
+.site-footer__links {
+  color: $clr-light;
+  margin-top: 40px;
+  font-size: 14px;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+
+  span {
+    margin: 0 5px;
+  }
+
+}

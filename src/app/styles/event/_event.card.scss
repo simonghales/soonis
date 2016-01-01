@@ -1,14 +1,15 @@
 
-$event-card-width: 270px;
 .event-card {
+  @include border-radius(5px);
+  @include box-shadow(0,0,10px,rgba(0,0,0,0.08));
 
   width: $event-card-width;
-  //background-color: #EDF1F7;
+  //background-color: #F8FAFD;
 }
 
   .event-card__layer {
-    @include border-radius(5px);
-    @include box-shadow(0,0,2px,rgba(0,0,0,0.2));
+    //@include border-radius(5px);
+    //@include box-shadow(0,0,2px,rgba(0,0,0,0.2));
   }
 
   .event-card__thumb {
@@ -21,23 +22,33 @@ $event-card-width: 270px;
   }
 
   .event-card__info {
-    //background-color: #ffffff;
-    //border-left: 1px solid #EDF1F7;
-    //border-right: 1px solid #EDF1F7;
+    background-color: #ffffff;
+    //border-left: 1px solid #F8FAFD;
+    //border-right: 1px solid #F8FAFD;
     padding: 14px 10px;
   }
 
     .event-card__title {
+      color: $clr-dark;
       font-size: 15px;
       font-weight: bold;
       margin-bottom: 4px;
     }
 
     .event-card__desc {
+      @include lines-truncate(17px, 4);
+      color: $clr-medium;
       font-size: 14px;
-      line-height: 17px;
+      //line-height: 17px;
     }
 
   .event-card__options {
-    padding: 8px 5px 0 5px;
+    @extend .clearfix;
+    //padding: 8px 5px 0 5px;
+    padding: 10px;
+
+    .right-side {
+      float: right;
+    }
+
   }
