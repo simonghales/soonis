@@ -94,6 +94,16 @@
   color: $clr-dark;
   font-size: 16px;
   padding: 14px 18px;
+
+  &.btn--smaller {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  &.btn--lighter {
+    color: #ffffff;
+  }
+
 }
 
 .btn--med-round {
@@ -102,4 +112,40 @@
 
   padding: 12px 16px;
   border: 2px solid black;
+
+  &.btn--smaller {
+    padding: 8px 12px;
+  }
+
+  &.btn--lighter {
+    border-color: #ffffff;
+  }
+
+}
+
+.btn--prominent {
+  @include border-radius(5px);
+  @include transition(all 250ms ease);
+
+  background-color: $clr-primary;
+  color: #ffffff;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+
+  &:active {
+    transform: translate(0, 2px);
+  }
+
+  &.btn--lighter {
+    background-color: $clr-cream;
+    color: $clr-medium;
+
+    &:hover {
+      color: $clr-dark;
+    }
+
+  }
+
 }

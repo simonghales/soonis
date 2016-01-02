@@ -10,7 +10,8 @@
     var vm = this;
 
     vm.states = {
-      userOpen: false
+      userOpen: false,
+      userSignedIn: false
     };
 
     vm.toggleUser= toggleUser;

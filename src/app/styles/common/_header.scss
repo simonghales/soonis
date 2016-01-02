@@ -280,3 +280,18 @@ $site-header__offset: 15px;
     }
 
   }
+
+.scroller {
+  height: 240px;
+  overflow-y: hidden;
+  position: relative;
+  list-style-type: none;
+}
+
+.header-options {
+
+ .btn {
+   margin-left: 5px;
+ }
+
+}

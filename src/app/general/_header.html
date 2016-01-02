@@ -1,74 +1,100 @@
 <header class="site-header">
   <div class="site-logo top-left">
-    <div class="site-logo__icon"></div>
-    <h2 class="site-logo__title"><span>soon</span>.is</h2>
+    <a ui-sref="home">
+      <div class="site-logo__icon"></div>
+      <h2 class="site-logo__title"><span>soon</span>.is</h2>
+    </a>
   </div>
   <div class="user-fixed top-right" ng-controller="NotificationsController as notiVM">
-    <div ng-class="{
+    <div ng-if="!headerVM.states.userSignedIn" class="header-options">
+      <button class="btn btn--med-plain btn--smaller btn--lighter">SIGN IN</button>
+      <button class="btn btn--med-round btn--smaller btn--lighter">CREATE ACCOUNT</button>
+    </div>
+    <div ng-if="headerVM.states.userSignedIn"
+         class="ng-hide">
+      <div ng-class="{
           'state--open': notiVM.states.notificationsOpen
          }"
-         class="user-fixed__notifications-wrapper">
-      <div ng-show="notiVM.states.notificationsOpen"
-           class="user-fixed__notifications__dropdown">
-        <header>
-          <h3>NOTIFICATIONS</h3>
-        </header>
-        <ul class="notifications-list">
-          <li>
-            <notification></notification>
-          </li>
-          <li>
-            <notification></notification>
-          </li>
-          <li>
-            <notification></notification>
-          </li>
-          <li>
-            <notification></notification>
-          </li>
-          <li>
-            <notification></notification>
-          </li>
-        </ul>
+           class="user-fixed__notifications-wrapper">
+        <div ng-show="notiVM.states.notificationsOpen"
+             off-click="notiVM.closeNotifications()"
+             off-click-filter="'.user-fixed__notifications'"
+             off-click-if="notiVM.states.notificationsOpen"
+             class="user-fixed__notifications__dropdown ng-hide">
+          <header>
+            <h3>NOTIFICATIONS</h3>
+          </header>
+          <ul class="notifications-list scroller"
+              perfect-scrollbar
+              wheel-propagation="false"
+              wheel-speed="2"
+              min-scrollbar-length="20">
+            <li>
+              <notification></notification>
+            </li>
+            <li>
+              <notification></notification>
+            </li>
+            <li>
+              <notification></notification>
+            </li>
+            <li>
+              <notification></notification>
+            </li>
+            <li>
+              <notification></notification>
+            </li>
+            <li>
+              <notification></notification>
+            </li>
+            <li>
+              <notification></notification>
+            </li>
+          </ul>
+        </div>
+        <div ng-click="notiVM.toggleNotifications();"
+             class="user-fixed__notifications">
+          <span class="count">3</span>
+          <span class="icon icon-cancel"></span>
+        </div>
       </div>
-      <div ng-click="notiVM.toggleNotifications();"
-           class="user-fixed__notifications">
-        <span class="count">3</span>
-        <span class="icon icon-cancel"></span>
-      </div>
-    </div>
-    <div ng-class="{
+      <div
+        ng-class="{
           'state--open': headerVM.states.userOpen
          }" class="user-fixed__thumb-wrapper">
-      <div ng-show="headerVM.states.userOpen"
-           class="user-fixed__thumb__dropdown rounded-dropdown">
-        <header class="rounded-dropdown__header">
-          <h3>Simon Hales</h3>
-          <p>view profile</p>
-        </header>
-        <ul class="rounded-dropdown__list">
-          <li>
-            <a>
-              Settings
-            </a>
-          </li>
-          <li>
-            <a>
-              About
-            </a>
-          </li>
-          <li>
-            <a>
-              Sign Out
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div ng-click="headerVM.toggleUser();"
-           class="user-fixed__thumb">
-        <div class="image"
-             style="background-image:url(/assets/images/placeholder/me2.jpg);"></div>
-        <!--<div class="icon icon-cancel"></div>-->
+        <div ng-show="headerVM.states.userOpen"
+             off-click="headerVM.closeUser()"
+             off-click-filter="'.user-fixed__thumb'"
+             off-click-if="headerVM.states.userOpen"
+             class="user-fixed__thumb__dropdown rounded-dropdown ng-hide">
+          <header class="rounded-dropdown__header">
+            <h3>Simon Hales</h3>
+            <p>view profile</p>
+          </header>
+          <ul class="rounded-dropdown__list">
+            <li>
+              <a>
+                Settings
+              </a>
+            </li>
+            <li>
+              <a>
+                About
+              </a>
+            </li>
+            <li>
+              <a>
+                Sign Out
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div ng-click="headerVM.toggleUser();"
+             class="user-fixed__thumb">
+          <div class="image"
+               style="background-image:url(/assets/images/placeholder/me2.jpg);"></div>
+          <!--<div class="icon icon-cancel"></div>-->
+        </div>
       </div>
     </div>
   </div>

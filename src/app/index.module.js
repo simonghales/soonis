@@ -12,7 +12,9 @@
                       'ngSanitize',
                       'restangular',
                       'ui.router',
-                      'toastr'
+                      'toastr',
+                      'offClick',
+                      'perfect_scrollbar'
                       ]);
 
   // General
