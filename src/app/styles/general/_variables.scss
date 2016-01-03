@@ -45,6 +45,24 @@ $column-width: 270px;
     @include border-radius(50%);
     width: 100%;
     height: 100%;
+    max-width: none;
+    max-height: none;
+  }
+
+}
+
+%thumb-medium {
+
+  width: 36px;
+  height: 36px;
+
+
+  img {
+    @include border-radius(50%);
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
   }
 
 }

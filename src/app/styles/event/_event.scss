@@ -128,10 +128,29 @@
 }
 
   .event-details__author {
+    @extend .clearfix;
+
     margin-bottom: 20px;
 
     .thumb {
       @extend %thumb-default;
+      float: left;
+      margin-right: 18px;
+    }
+
+    .info {
+      overflow: hidden;
+    }
+
+    .subtitle {
+      @extend %text-small-italic;
+
+      margin: 11px 0 5px 0;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
     }
 
   }
@@ -166,6 +185,26 @@
       font-weight: normal;
       display: inline-block;
       margin-left: 6px;
+    }
+
+  }
+
+.event-followers {}
+
+  .event-followers__list {
+    @extend .clearfix;
+
+    margin-top: 10px;
+
+    > li {
+      float: left;
+      margin-bottom: 10px;
+      margin-right: 10px;
+
+      &:nth-of-type(6n) {
+        margin-right: 0;
+      }
+
     }
 
   }

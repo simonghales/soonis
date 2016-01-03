@@ -8,6 +8,7 @@
 }
 
 body {
+  color: $clr-dark;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 16px;
@@ -33,6 +34,12 @@ body {
   font-size: 14px;
   line-height: 14px;
   font-weight: bold;
+}
+
+%text-small-italic {
+  color: $clr-light;
+  font-size: 13px;
+  font-style: italic;
 }
 
 a {
