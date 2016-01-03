@@ -1,7 +1,39 @@
 <section class="event-body">
   <div class="site-maxwidth">
     <aside class="event-aside">
-      ASIDE STUFF
+      <section class="event-details">
+        <div class="event-details__author">
+          <div class="thumb">
+            <img ng-src="/assets/images/placeholder/me.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+          </div>
+          <div class="info">
+            <h5 class="subtitle">Event Author</h5>
+            <h4 class="title">Simon Hales</h4>
+          </div>
+        </div>
+        <ul class="event-details__list">
+          <li>
+            <span class="label">Posted in</span>
+            <span class="value">Space</span>
+          </li>
+          <li>
+            <span class="label">Created</span>
+            <span class="value">
+              12 days ago <span class="sub">21/04/2015</span>
+            </span>
+          </li>
+          <li>
+            <span class="label">Updated</span>
+            <span class="value">
+              11 days ago <span class="sub">22/04/2015</span>
+            </span>
+          </li>
+        </ul>
+      </section>
+      <header class="general-category__header">
+        <h3 class="general-category__header__title"><span>Followers</span></h3>
+        <a class="general-category__header__link" ng-click>SEE ALL</a>
+      </header>
     </aside>
     <section class="event-main">
       <section class="event-left">
@@ -37,7 +69,7 @@
           <br/>
           Cum, laborum!
         </p>
-        <ul>
+        <ul class="list-thumbs">
           <li>
             <div class="thumb-general">
               <img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
@@ -69,6 +101,42 @@
             </div>
           </li>
         </ul>
+        <section class="comments-section">
+          <header class="comments-section__header general-category__header">
+            <h3 class="general-category__header__title"><span>Comments</span></h3>
+            <a class="general-category__header__link" ng-click>SEE ALL</a>
+          </header>
+          <div class="comment-form comment-structure">
+            <div class="comment-structure__left">
+              <div class="comment-form__thumb comment-structure__thumb">
+                <img ng-src="/assets/images/placeholder/me.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+              </div>
+            </div>
+            <div class="comment-form__side comment-structure__side">
+              <div class="comment-structure__input-wrapper">
+                <textarea class="textarea textarea--plain"></textarea>
+              </div>
+              <button class="btn btn--general comment-structure__button">POST</button>
+            </div>
+          </div>
+          <ul class="comments-list">
+            <li>
+              <comment></comment>
+            </li>
+            <li>
+              <comment></comment>
+            </li>
+            <li>
+              <comment></comment>
+            </li>
+            <li>
+              <comment></comment>
+            </li>
+            <li>
+              <comment></comment>
+            </li>
+          </ul>
+        </section>
       </section>
     </section>
   </div>

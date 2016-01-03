@@ -149,3 +149,12 @@
   }
 
 }
+
+.btn--general {
+  @include border-radius(5px);
+  font-size: 15px;
+  padding: 5px 9px;
+  border: 2px solid $clr-cream;
+  color: $clr-medium;
+  cursor: default;
+}

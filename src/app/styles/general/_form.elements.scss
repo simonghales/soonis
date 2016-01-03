@@ -1,0 +1,25 @@
+
+.textarea {
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+.textarea--plain {
+  @include border-radius(5px);
+
+  font-size: 15px;
+  width: 100%;
+  resize: none;
+  border: 0;
+  background-color: $clr-cream;
+  padding: 10px;
+  height: 160px;
+
+  &:focus {
+    background-color: #D4E1EF;
+  }
+
+}
