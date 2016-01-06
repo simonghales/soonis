@@ -1,3 +1,18 @@
-<div id="user-hover-popup" class="user-hover-popup" ng-show="visible">
-  BUTTS: {{visible}}
+<div id="user-hover-popup"
+     ng-class="{
+      'align--right' : alignRight
+     }"
+     class="user-hover-popup" ng-show="visible">
+  <div class="user-thumb user-thumb--big">
+    <a href="">
+      <img ng-src="/assets/images/placeholder/me2.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+    </a>
+  </div>
+  <a class="user-name" href="">Simon Hales</a>
+  <div class="options">
+    <button class="btn btn--prominent btn--smaller">
+      FOLLOW
+      <span class="icon icon-star-empty"></span>
+    </button>
+  </div>
 </div>

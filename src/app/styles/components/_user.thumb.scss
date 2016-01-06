@@ -2,3 +2,7 @@
 .user-thumb {
   @extend %thumb-medium;
 }
+
+.user-thumb--big {
+  @extend %thumb-big;
+}

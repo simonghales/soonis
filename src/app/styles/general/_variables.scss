@@ -33,6 +33,23 @@ $column-width: 270px;
 
 }
 
+%fadeToggle {
+
+  @include transition(all 150ms ease);
+
+
+  &.ng-hide-remove,
+  &.ng-enter {
+    @include animation(fadeIn 150ms ease);
+  }
+
+  &.ng-hide-add,
+  &.ng-leave {
+    @include animation(fadeOut 150ms ease);
+  }
+
+}
+
 // Images
 
 %thumb-default {
@@ -64,5 +81,12 @@ $column-width: 270px;
     max-width: none;
     max-height: none;
   }
+
+}
+
+%thumb-big {
+
+  width: 80px;
+  height: 80px;
 
 }

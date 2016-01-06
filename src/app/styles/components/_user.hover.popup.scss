@@ -1,9 +1,54 @@
 .user-hover-popup {
-  position: fixed;
+  @extend %fadeToggle;
+
+  @include box-shadow(0, 0, 20px, rgba(0,0,0,0.2));
+  @include border-radius(4px);
+
+  position: absolute;
   z-index: 1000;
   top: 50px;
   right: 300px;
   width: 200px;
-  height: 50px;
-  background-color: red;
+  background-color: #ffffff;
+  text-align: center;
+
+  padding: 20px;
+
+  &::before {
+
+    $triangle-size: 10px;
+
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: $triangle-size solid transparent;
+    border-right: $triangle-size solid transparent;
+    border-bottom: $triangle-size solid #ffffff;
+
+    position: absolute;
+    top: -$triangle-size;
+    left: 5px;
+  }
+
+  &.align--right {
+
+    &::before {
+      left: auto;
+      right: 5px;
+    }
+
+  }
+
+  .user-thumb {
+    margin: 0 auto 10px auto;
+  }
+
+  .user-name {
+    @extend %link--medium;
+  }
+
+  .options {
+    margin-top: 10px;
+  }
+
 }

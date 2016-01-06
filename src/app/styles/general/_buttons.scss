@@ -138,6 +138,11 @@
     transform: translate(0, 2px);
   }
 
+  &.btn--smaller {
+    font-size: 16px;
+    padding: 15px;
+  }
+
   &.btn--lighter {
     background-color: $clr-cream;
     color: $clr-medium;

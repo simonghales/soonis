@@ -52,6 +52,15 @@ a {
 
 }
 
+%link--medium {
+  font-size: 16px;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 %link-hover {
   text-decoration: none;
 

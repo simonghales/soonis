@@ -10,7 +10,8 @@
 
     var _position = {
       x: 0,
-      y: 0
+      y: 0,
+      alignLeft: true
     };
 
     var service = {
@@ -24,9 +25,11 @@
       return _position;
     }
 
-    function setPosition(x, y) {
+    function setPosition(x, y, alignRight) {
       _position.x = x;
       _position.y = y;
+      if(alignRight) _position.alignLeft = false;
+      else _position.alignLeft = true;
     }
 
   }
