@@ -6,7 +6,15 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log) {
+  function runBlock($rootScope, $log) {
+
+    _routeEvents();
+
+    function _routeEvents() {
+
+
+
+    }
 
     $log.debug('runBlock end');
   }

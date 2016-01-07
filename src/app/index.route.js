@@ -19,6 +19,12 @@
         templateUrl: 'app/event/event.page.html',
         //controller: 'MainController',
         //controllerAs: 'mainVM'
+      })
+      .state('user', {
+        url: '/u/:id/:slug',
+        templateUrl: 'app/user/user.html',
+        //controller: 'MainController',
+        //controllerAs: 'mainVM'
       });
 
     $urlRouterProvider.otherwise('/');

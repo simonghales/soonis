@@ -20,13 +20,26 @@
     function link(scope, element, attrs) {
 
       var hovered = false;
+      var recentlyChangedState = false;
 
       _activate();
 
       function _activate() {
 
         $rootScope.$on("user-hover-popup.display", function() {
+          if(recentlyChangedState) return;
           _display();
+        });
+
+        $rootScope.$on('$stateChangeStart', function() {
+          _hide(true);
+          recentlyChangedState = true;
+
+          $timeout(function() {
+            recentlyChangedState = false;
+          }, 1000);
+
+          //$log.debug("hide this thing, but changing the scope stuffs it up :(");
         });
 
         $rootScope.$on("user-hover-popup.hide", function() {
@@ -36,7 +49,7 @@
         element.bind("mouseover", _mouseOver);
         element.bind("mouseleave", _mouseLeave);
 
-        _display();
+        //_display();
 
       }
 
@@ -61,13 +74,15 @@
           right: 'auto'
         });
 
+        $log.debug("Show!", scope.visible);
+
       }
 
-      function _hide() {
-        if(hovered) return;
+      function _hide(force) {
+        if(hovered && !force) return;
         $timeout(function() {
-          $log.debug("hiding");
           scope.visible = false;
+          $log.debug("hiding", scope.visible);
         });
       }
 

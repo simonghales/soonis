@@ -1,0 +1,13 @@
+.col-wrapper {
+  @extend .clearfix;
+}
+
+.col-1 {
+  float: left;
+  width: $column-width;
+  margin-right: 20px;
+}
+
+.col-remaining {
+  overflow: hidden;
+}

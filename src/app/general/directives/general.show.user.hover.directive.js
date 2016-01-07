@@ -20,8 +20,14 @@
       var _hoverTimeout = null;
       var _hovered = false;
 
-      element.bind("mouseover", _addUserHover);
-      element.bind("mouseleave", _hideUserHover);
+      _activate();
+
+      function _activate() {
+
+        element.bind("mouseover", _addUserHover);
+        element.bind("mouseleave", _hideUserHover);
+        element.bind("click", _hideUserHover);
+      }
 
       function _addUserHover() {
 
@@ -61,10 +67,7 @@
 
       }
 
-      function _hideUserHover() {
-
-        _hovered = false;
-
+      function _cancelTimeout() {
         if(_hoverTimeout !== null) {
           $timeout.cancel(_hoverTimeout);
           _hoverTimeout = null;
@@ -72,6 +75,13 @@
         } else {
           $log.debug("Nothing to cancel");
         }
+      }
+
+      function _hideUserHover() {
+
+        _hovered = false;
+
+        _cancelTimeout();
 
         $timeout(function() {
           $rootScope.$broadcast("user-hover-popup.hide");
