@@ -1,16 +1,180 @@
-<section class="page">
-  <div class="col-wrapper site-maxwidth">
-    <div class="thumb-and-info col-1">
-      <div class="thumb-and-info__thumb">
-        <img ng-src="/assets/images/placeholder/me.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
-      </div>
-      <div class="thumb-and-info__info">
-        <div class="thumb-and-info__title">Simon Hales</div>
-        <div class="thumb-and-info__subtitle">08/03/2015 2:00am</div>
+<section class="page page--profile">
+  <site-header></site-header>
+  <section class="big-display">
+    <div class="big-display__image" style="background-image:url(/assets/images/placeholder/event-mars.jpg);"></div>
+    <div class="big-display__underlay"></div>
+    <div class="big-display__content">
+      <div class="thumb-and-title">
+        <div class="thumb-and-title__thumb user-thumb user-thumb--huge thumb--border">
+          <a ui-sref="user({id: 'boop', slug: 'woop'})">
+            <img ng-src="/assets/images/placeholder/me2.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+          </a>
+        </div>
+        <div class="thumb-and-title__title-wrapper">
+          <a class="thumb-and-title__title" href="">Simon Hales</a>
+        </div>
+        <button class="btn btn--prominent btn--tiny">
+          FOLLOW
+          <span class="icon icon-star-empty"></span>
+        </button>
       </div>
     </div>
-    <div class="col-remaining">
-      REMAINING STUFF YO
+  </section>
+  <div class="user-body col-wrapper flex site-maxwidth">
+    <div class="user-side col-1">
+
+      <div class="thumb-side-info">
+        <div class="user-thumb user-thumb--big thumb-side-info__thumb">
+          <a ui-sref="user({id: 'boop', slug: 'woop'})">
+            <img ng-src="/assets/images/placeholder/me2.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+          </a>
+        </div>
+        <div class="thumb-side-info__side">
+          <a ui-sref="user({id: 'boop', slug: 'woop'})"
+             class="thumb-side-info__title">Simon Hales</a>
+          <button class="btn btn--prominent btn--tiny">
+            FOLLOW
+            <span class="icon icon-star-empty"></span>
+          </button>
+        </div>
+      </div>
+      <section class="user-details">
+        <p class="text__desc">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque neque odio omnis possimus repellat
+          vel.
+          <br/>
+          <br/>
+          Beatae deleniti dicta exercitationem expedita ipsam iste iure labore molestias,
+          necessitatibus officiis quibusdam quisquam.
+        </p>
+      </section>
+      <section class="user-list">
+        <header class="general-category__header">
+          <h3 class="general-category__header__title"><span>Followers <span>(7)</span></span></h3>
+          <!--<a class="general-category__header__link" ng-click>SEE ALL</a>-->
+        </header>
+        <ul class="event-followers__list">
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+        </ul>
+      </section>
+      <section class="user-list">
+        <header class="general-category__header">
+          <h3 class="general-category__header__title"><span>Following <span>(42)</span></span></h3>
+          <a class="general-category__header__link" ng-click>SEE ALL</a>
+        </header>
+        <ul class="event-followers__list">
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+          <li>
+            <user-thumb></user-thumb>
+          </li>
+        </ul>
+      </section>
+
+      <!--<div class="thumb-and-info">-->
+        <!--<div class="thumb-and-info__thumb">-->
+          <!--<img ng-src="/assets/images/placeholder/me.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />-->
+        <!--</div>-->
+        <!--<div class="thumb-and-info__info">-->
+          <!--<div class="thumb-and-info__title">Simon Hales</div>-->
+          <!--<p class="thumb-and-info__desc">-->
+            <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto autem corporis enim ex in ipsam quas-->
+            <!--saepe sunt? Atque autem dicta doloribus id ipsum maiores modi neque officia rerum, voluptas!-->
+          <!--</p>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<button class="follow-button btn btn&#45;&#45;prominent">-->
+        <!--FOLLOW-->
+        <!--<span class="icon icon-star-empty"></span>-->
+      <!--</button>-->
+    </div>
+    <div class="user-body col-remaining">
+      <section class="events-category general-category col-3">
+        <header class="general-category__header">
+          <h3 class="general-category__header__title"><span>Created <span>(6)</span></span></h3>
+          <a class="general-category__header__link" ng-click>SEE ALL</a>
+        </header>
+        <ul class="general-category__list">
+          <li>
+            <event-card></event-card>
+          </li>
+          <li>
+            <event-card></event-card>
+          </li>
+          <li>
+            <event-card></event-card>
+          </li>
+        </ul>
+      </section>
+      <section class="events-category general-category col-3">
+        <header class="general-category__header">
+          <h3 class="general-category__header__title"><span>Following <span>(12)</span></span></h3>
+          <a class="general-category__header__link" ng-click>SEE ALL</a>
+        </header>
+        <ul class="general-category__list">
+          <li>
+            <event-card></event-card>
+          </li>
+          <li>
+            <event-card></event-card>
+          </li>
+          <li>
+            <event-card></event-card>
+          </li>
+        </ul>
+      </section>
     </div>
   </div>
+  <site-footer></site-footer>
 </section>

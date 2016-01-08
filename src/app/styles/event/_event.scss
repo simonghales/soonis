@@ -43,44 +43,6 @@
 
     }
 
-
-.thumb-and-info {
-  @include box-shadow(0,0,10px,rgba(0,0,0,0.08));
-  @include border-radius(5px);
-}
-
-  .thumb-and-info__thumb {
-    @include border-radius-separate(5px, 5px, 0, 0);
-
-    height: $column-width;
-    background-color: $clr-cream;
-    overflow: hidden;
-
-  }
-
-  .thumb-and-info__info {
-    @include border-radius-separate(0, 0, 5px, 5px);
-
-    //background-color: $clr-lightcream;
-    padding: 20px;
-    text-align: center;
-  }
-
-    .thumb-and-info__title {
-      color: $clr-dark;
-      font-size: 22px;
-      line-height: 24px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .thumb-and-info__subtitle {
-      color: $clr-medium;
-      font-size: 16px;
-      line-height: 16px;
-      font-weight: bold;
-    }
-
 .list-thumbs {
   @extend .clearfix;
 

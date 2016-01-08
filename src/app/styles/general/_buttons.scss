@@ -62,7 +62,10 @@
 
     &:hover {
       color: $clr-primary;
-      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(1.05);
     }
 
   }
@@ -151,6 +154,13 @@
       color: $clr-dark;
     }
 
+  }
+
+  &.btn--tiny {
+    font-size: 16px;
+    padding: 10px 18px;
+    display: inline-block;
+    width: auto;
   }
 
 }

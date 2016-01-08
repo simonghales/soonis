@@ -17,6 +17,7 @@
 @import "styles/general/buttons";
 @import "styles/general/form.elements";
 
+@import "styles/components/common";
 @import "styles/components/slider";
 @import "styles/components/comment";
 @import "styles/components/user.thumb";
@@ -35,6 +36,9 @@
 
 @import "styles/event/event";
 @import "styles/event/components/event.header";
+
+@import "styles/user/user";
+@import "styles/user/user.intro";
 
 /* Do not remove the comments below. It's the markers used by gulp-inject to inject
    all your sass files automatically */

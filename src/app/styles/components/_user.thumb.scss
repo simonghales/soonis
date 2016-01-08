@@ -1,8 +1,25 @@
 
 .user-thumb {
   @extend %thumb-medium;
+
+  a {
+    display: block;
+  }
+
+  &.thumb--border {
+
+    img {
+      border: 5px solid #ffffff;
+    }
+
+  }
+
 }
 
 .user-thumb--big {
   @extend %thumb-big;
+}
+
+.user-thumb--huge {
+  @extend %thumb-huge;
 }
