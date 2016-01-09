@@ -52,6 +52,13 @@ $column-width: 270px;
 
 // Images
 
+%image--full {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+}
+
 %thumb-default {
 
   width: 60px;
@@ -59,11 +66,8 @@ $column-width: 270px;
 
 
   img {
+    @extend %image--full;
     @include border-radius(50%);
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
   }
 
 }
@@ -75,11 +79,8 @@ $column-width: 270px;
 
 
   img {
+    @extend %image--full;
     @include border-radius(50%);
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    max-height: none;
   }
 
 }

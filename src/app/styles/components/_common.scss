@@ -1,4 +1,26 @@
+%popup {
+  @include box-shadow(0, 0, 20px, rgba(0,0,0,0.2));
+  @include border-radius(4px);
+  padding: 20px;
+}
 
+%popup__triangle {
+  &::before {
+
+    $triangle-size: 10px;
+
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: $triangle-size solid transparent;
+    border-right: $triangle-size solid transparent;
+    border-bottom: $triangle-size solid #ffffff;
+
+    position: absolute;
+    top: -$triangle-size;
+    left: 5px;
+  }
+}
 
 
 .thumb-and-info {

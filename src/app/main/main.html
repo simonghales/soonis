@@ -6,23 +6,12 @@
   <section class="main-body">
     <div class="site-maxwidth">
       <div class="main-body__top">
-        <section class="events-category general-category col-3">
-          <header class="general-category__header">
-            <h3 class="general-category__header__title">Soon in <span>Space</span></h3>
-            <a class="general-category__header__link" ng-click>SEE ALL</a>
-          </header>
-          <ul class="general-category__list">
-            <li>
-              <event-card></event-card>
-            </li>
-            <li>
-              <event-card></event-card>
-            </li>
-            <li>
-              <event-card></event-card>
-            </li>
-          </ul>
-        </section>
+        <event-category ng-if="mainVM.data.categoriesSorted.featured"
+                        class="events-category"
+                        limit="3"
+                        category="{{::mainVM.data.categoriesSorted.featured.name}}"
+                        category-data="::mainVM.data.categoriesSorted.featured"
+          ></event-category>
         <aside class="main-aside general-category">
           <button class="btn btn--big">
             NEW EVENT
@@ -50,46 +39,12 @@
           </ul>
         </aside>
       </div>
-      <section class="events-category general-category">
-        <header class="general-category__header">
-          <h3 class="general-category__header__title">Soon in <span>Space</span></h3>
-          <a class="general-category__header__link" ng-click>SEE ALL</a>
-        </header>
-        <ul class="general-category__list">
-          <li>
-            <event-card></event-card>
-          </li>
-          <li>
-            <event-card></event-card>
-          </li>
-          <li>
-            <event-card></event-card>
-          </li>
-          <li>
-            <event-card></event-card>
-          </li>
-        </ul>
-      </section>
-      <section class="events-category general-category">
-        <header class="general-category__header">
-          <h3 class="general-category__header__title">Soon in <span>Space</span></h3>
-          <a class="general-category__header__link" ng-click>SEE ALL</a>
-        </header>
-        <ul class="general-category__list">
-          <li>
-            <event-card></event-card>
-          </li>
-          <li>
-            <event-card></event-card>
-          </li>
-          <li>
-            <event-card></event-card>
-          </li>
-          <li>
-            <event-card></event-card>
-          </li>
-        </ul>
-      </section>
+      <event-category ng-repeat="category in ::mainVM.data.categoriesSorted.categories"
+                      class="events-category"
+                      limit="4"
+                      category="{{::category.name}}"
+                      category-data="::category"
+                      ></event-category>
     </div>
   </section>
   <site-footer></site-footer>

@@ -1,0 +1,18 @@
+<section class="general-category col-{{::limit}}">
+  <header class="general-category__header">
+    <h3 class="general-category__header__title">
+      <a href="">Soon in <span ng-bind="::category"></span></a>
+    </h3>
+    <a class="general-category__header__link" href="">SEE ALL</a>
+  </header>
+  <ul ng-if="categoryVM.states.loading" class="general-category__list">
+    <li ng-repeat="placeholder in ::categoryVM.placeholder">
+      <event-card-placeholder></event-card-placeholder>
+    </li>
+  </ul>
+  <ul ng-if="categoryVM.states.loaded" class="general-category__list">
+    <li ng-repeat="event in ::categoryVM.data.events">
+      <event-card></event-card>
+    </li>
+  </ul>
+</section>

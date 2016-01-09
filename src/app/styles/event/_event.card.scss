@@ -1,4 +1,10 @@
 
+@mixin event-placeholder {
+  .event-card--placeholder & {
+    @content;
+  }
+}
+
 .event-card {
   @include border-radius(5px);
   @include box-shadow(0,0,10px,rgba(0,0,0,0.08));
@@ -12,27 +18,89 @@
     //@include box-shadow(0,0,2px,rgba(0,0,0,0.2));
   }
 
+  .event-card__top {
+    display: flex;
+  }
+
+    .event-card__clock {
+      color: $clr-light;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .event-card__when-wrapper {
+      margin: 8px 0 1px 0;
+    }
+
+    .event-card__when {
+      font-weight: bold;
+      margin: 8px 0 1px 0;
+
+      @include event-placeholder {
+        background-color: $clr-cream;
+        color: transparent;
+        display: inline;
+      }
+
+    }
+
+    .event-card__date-wrapper {
+      margin-top: 4px;
+    }
+
+    .event-card__date {
+      color: $clr-medium-light;
+      font-size: 12px;
+
+      @include event-placeholder {
+        background-color: $clr-lightcream;
+        color: transparent;
+        display: inline;
+      }
+
+    }
+
   .event-card__thumb {
     @extend .img-cover;
 
-    @include border-radius-separate(5px, 5px, 0, 0);
+    //@include border-radius-separate(5px, 5px, 0, 0);
 
     width: 100%;
     height: $event-card-width;
+
+    img {
+      @extend %image--full;
+    }
+
+    @include event-placeholder {
+      background-color: $clr-lightcream;
+    }
+
   }
 
   .event-card__info {
     background-color: #ffffff;
+    min-height: 132px;
     //border-left: 1px solid #F8FAFD;
     //border-right: 1px solid #F8FAFD;
     padding: 14px 10px;
   }
 
     .event-card__title {
+      @include lines-truncate(16px, 2);
       color: $clr-dark;
       font-size: 15px;
       font-weight: bold;
       margin-bottom: 4px;
+
+      @include event-placeholder {
+        background-color: $clr-cream;
+        color: transparent;
+      }
+
     }
 
     .event-card__desc {
@@ -40,6 +108,13 @@
       color: $clr-medium;
       font-size: 14px;
       //line-height: 17px;
+
+      @include event-placeholder {
+        background-color: $clr-lightcream;
+        color: transparent;
+        display: inline-block;
+      }
+
     }
 
   .event-card__options {
@@ -49,6 +124,14 @@
 
     .right-side {
       float: right;
+    }
+
+    @include event-placeholder {
+
+      .btn {
+        visibility: hidden;
+      }
+
     }
 
   }

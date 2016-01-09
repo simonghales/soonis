@@ -1,4 +1,5 @@
 .general-category {
+  min-height: 526px;
 
   &.col-3 {
     width: ($event-card-width * 3) + (20px * 2);

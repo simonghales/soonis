@@ -1,0 +1,10 @@
+.date-hover {
+  @extend %popup;
+  @extend %popup__triangle;
+
+  position: absolute;
+  top: 1020px;
+  left: 610px;
+  z-index: 500;
+  background-color: #ffffff;
+}

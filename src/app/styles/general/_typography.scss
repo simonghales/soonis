@@ -70,6 +70,10 @@ a {
 
 }
 
+.link-hover {
+  @extend %link-hover;
+}
+
 .heading--medium {
   color: $clr-dark;
   font-size: 22px;
@@ -81,4 +85,9 @@ a {
   color: $clr-dark;
   font-size: 15px;
   line-height: 20px;
+}
+
+.text--sml--bold {
+  color: $clr-dark;
+  font-weight: bold;
 }

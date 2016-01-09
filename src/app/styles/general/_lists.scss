@@ -1,0 +1,28 @@
+.list-info {
+
+  > li {
+    margin-top: 20px;
+    display: flex;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+  }
+
+}
+
+  .list-info__label {
+    color: $clr-medium-light;
+    width: 70px;
+    margin-right: 10px;
+  }
+
+  .list-info__info {
+    color: $clr-medium;
+
+    .sub {
+      margin-top: 2px;
+    }
+
+  }

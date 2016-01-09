@@ -3,13 +3,13 @@
 
   angular
     .module('soonis.general.directives')
-    .directive('userHoverPopup', userHoverPopup);
+    .directive('dateHoverDisplay', dateHoverDisplay);
 
-  function userHoverPopup($log, $rootScope, $timeout, $window, UserPopupService) {
+  function dateHoverDisplay($log, $rootScope, $timeout, $window, DateHoverService) {
 
     var directive = {
       restrict: 'E',
-      templateUrl: 'app/general/_user.hover.popup.html',
+      templateUrl: 'app/general/_date.hover.html',
       replace: true,
       scope: {},
       link: link
@@ -19,6 +19,8 @@
 
     function link(scope, element, attrs) {
 
+      var eventName = "date-hover";
+
       var hovered = false;
       var recentlyChangedState = false;
 
@@ -26,7 +28,7 @@
 
       function _activate() {
 
-        $rootScope.$on("user-hover-popup.display", function() {
+        $rootScope.$on(eventName + ".display", function() {
           if(recentlyChangedState) return;
           _display();
         });
@@ -39,10 +41,9 @@
             recentlyChangedState = false;
           }, 1000);
 
-          //$log.debug("hide this thing, but changing the scope stuffs it up :(");
         });
 
-        $rootScope.$on("user-hover-popup.hide", function() {
+        $rootScope.$on(eventName + ".hide", function() {
           _hide();
         });
 
@@ -55,7 +56,7 @@
 
         scope.visible = true;
 
-        var offset = UserPopupService.getPosition();
+        var offset = DateHoverService.getPosition();
         var windowWidth = $window.innerWidth;
         var difference = (windowWidth - 20) - offset.x;
 

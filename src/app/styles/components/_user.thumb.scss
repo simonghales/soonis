@@ -1,6 +1,11 @@
 
 .user-thumb {
   @extend %thumb-medium;
+  @include transition(transform 250ms ease);
+
+  &:active {
+    transform: scale(1.1);
+  }
 
   a {
     display: block;

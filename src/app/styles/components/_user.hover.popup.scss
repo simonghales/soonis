@@ -1,8 +1,7 @@
 .user-hover-popup {
   @extend %fadeToggle;
-
-  @include box-shadow(0, 0, 20px, rgba(0,0,0,0.2));
-  @include border-radius(4px);
+  @extend %popup;
+  @extend %popup__triangle;
 
   position: absolute;
   z-index: 1000;
@@ -11,24 +10,6 @@
   width: 200px;
   background-color: #ffffff;
   text-align: center;
-
-  padding: 20px;
-
-  &::before {
-
-    $triangle-size: 10px;
-
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: $triangle-size solid transparent;
-    border-right: $triangle-size solid transparent;
-    border-bottom: $triangle-size solid #ffffff;
-
-    position: absolute;
-    top: -$triangle-size;
-    left: 5px;
-  }
 
   &.align--right {
 

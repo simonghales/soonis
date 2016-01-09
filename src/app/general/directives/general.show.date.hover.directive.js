@@ -3,9 +3,9 @@
 
   angular
     .module('soonis.general.directives')
-    .directive('showUserHover', showUserHover);
+    .directive('showDateHover', showDateHover);
 
-  function showUserHover($log, $rootScope, $timeout, $compile, UserPopupService) {
+  function showDateHover($log, $rootScope, $timeout, $compile, DateHoverService) {
 
     var directive = {
       restrict: 'A',
@@ -16,6 +16,9 @@
     return directive;
 
     function link(scope, element, attrs) {
+
+      var eventName = "date-hover";
+      var delay = 150;
 
       var _hoverTimeout = null;
       var _hovered = false;
@@ -49,22 +52,22 @@
           offset.top = offset.top + height + triangleOffset;
           offset.left = offset.left + sideOffset;
 
-          UserPopupService.setPosition(offset.left, offset.top);
+          DateHoverService.setPosition(offset.left, offset.top);
 
-          //$log.debug("offset", offset);
+          //$log.debug("offset", offset, element[0].offsetHeight);
 
-          if(angular.element(document.querySelector('#user-hover-popup'))[0]) {
-            $rootScope.$broadcast("user-hover-popup.display");
+          if(angular.element(document.querySelector('#date-hover-popup'))[0]) {
+            $rootScope.$broadcast(eventName + ".display");
           } else {
             angular.element(document.querySelectorAll('body')).append(
-              $compile("<user-hover-popup></user-hover-popup>")(scope)
+              $compile("<date-hover-display></date-hover-display>")(scope)
             );
           }
 
           //$log.debug("Showing it: timeout", _hoverTimeout);
 
           _hoverTimeout = null;
-        }, 300);
+        }, delay);
 
       }
 
@@ -85,7 +88,7 @@
         _cancelTimeout();
 
         $timeout(function() {
-          $rootScope.$broadcast("user-hover-popup.hide");
+          $rootScope.$broadcast(eventName + ".hide");
         }, 100);
 
       }
