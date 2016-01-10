@@ -81,6 +81,15 @@ a {
   font-weight: 500;
 }
 
+.clickable-links {
+
+  a {
+    @extend %link-hover;
+    color: $clr-anchor;
+  }
+
+}
+
 .text--medium {
   color: $clr-dark;
   font-size: 15px;

@@ -6,6 +6,10 @@
   <section class="main-body">
     <div class="site-maxwidth">
       <div class="main-body__top">
+        <event-category-placeholder
+          class="events-category"
+          ng-if="!mainVM.data.categoriesSorted.featured"
+          ></event-category-placeholder>
         <event-category ng-if="mainVM.data.categoriesSorted.featured"
                         class="events-category"
                         limit="3"

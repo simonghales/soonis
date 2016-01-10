@@ -8,11 +8,11 @@
       <div class="thumb-and-title">
         <div class="thumb-and-title__thumb user-thumb user-thumb--huge thumb--border">
           <a ui-sref="user({id: 'boop', slug: 'woop'})">
-            <img ng-src="/assets/images/placeholder/me2.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+            <img ng-src="{{userVM.data.user.userprofile.avatar_image_urls.thumbnail}}" src="/assets/images/blank.png" alt="thumbnail" />
           </a>
         </div>
         <div class="thumb-and-title__title-wrapper">
-          <a class="thumb-and-title__title" href="">Simon Hales</a>
+          <a class="thumb-and-title__title" href="" ng-bind="::userVM.data.user.username"></a>
         </div>
         <button class="btn btn--prominent btn--tiny">
           FOLLOW
@@ -27,12 +27,12 @@
       <div class="thumb-side-info">
         <div class="user-thumb user-thumb--big thumb-side-info__thumb">
           <a ui-sref="user({id: 'boop', slug: 'woop'})">
-            <img ng-src="/assets/images/placeholder/me2.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+            <img ng-src="{{userVM.data.user.userprofile.avatar_image_urls.thumbnail}}" src="/assets/images/blank.png" alt="thumbnail" />
           </a>
         </div>
         <div class="thumb-side-info__side">
           <a ui-sref="user({id: 'boop', slug: 'woop'})"
-             class="thumb-side-info__title">Simon Hales</a>
+             class="thumb-side-info__title" ng-bind="::userVM.data.user.username"></a>
           <button class="btn btn--prominent btn--tiny">
             FOLLOW
             <span class="icon icon-star-empty"></span>
@@ -40,14 +40,8 @@
         </div>
       </div>
       <section class="user-details">
-        <p class="text__desc">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi atque neque odio omnis possimus repellat
-          vel.
-          <br/>
-          <br/>
-          Beatae deleniti dicta exercitationem expedita ipsam iste iure labore molestias,
-          necessitatibus officiis quibusdam quisquam.
-        </p>
+        <p class="text__desc clickable-links white-space"
+           data-ng-bind-html="::(userVM.data.user.userprofile.bio | linky)"></p>
       </section>
       <section class="user-list">
         <header class="general-category__header">
@@ -81,7 +75,7 @@
       <section class="user-list">
         <header class="general-category__header">
           <h3 class="general-category__header__title"><span>Following <span>(42)</span></span></h3>
-          <a class="general-category__header__link" ng-click>SEE ALL</a>
+          <!--<a class="general-category__header__link" ng-click>SEE ALL</a>-->
         </header>
         <ul class="event-followers__list">
           <li>
@@ -144,16 +138,21 @@
       <section class="events-category general-category col-3">
         <header class="general-category__header">
           <h3 class="general-category__header__title"><span>Created</span></h3>
-          <a class="general-category__header__link" ng-click>SEE ALL <span>(6)</span></a>
+          <a class="general-category__header__link" ng-click>SEE ALL <span>(<span ng-bind="userVM.data.events.created.meta.count"></span>)</span></a>
         </header>
-        <ul class="general-category__list">
+        <ul ng-if="!userVM.data.events.created" class="general-category__list">
           <li>
-            <event-card></event-card>
+            <event-card-placeholder></event-card-placeholder>
           </li>
           <li>
-            <event-card></event-card>
+            <event-card-placeholder></event-card-placeholder>
           </li>
           <li>
+            <event-card-placeholder></event-card-placeholder>
+          </li>
+        </ul>
+        <ul ng-if="userVM.data.events.created" class="general-category__list">
+          <li ng-repeat="event in userVM.data.events.created">
             <event-card></event-card>
           </li>
         </ul>
@@ -161,16 +160,21 @@
       <section class="events-category general-category col-3">
         <header class="general-category__header">
           <h3 class="general-category__header__title"><span>Following</span></h3>
-          <a class="general-category__header__link" ng-click>SEE ALL <span>(12)</span></a>
+          <a class="general-category__header__link" ng-click>SEE ALL <span>(<span ng-bind="userVM.data.events.following.meta.count"></span>)</span></a>
         </header>
-        <ul class="general-category__list">
+        <ul ng-if="!userVM.data.events.following" class="general-category__list">
           <li>
-            <event-card></event-card>
+            <event-card-placeholder></event-card-placeholder>
           </li>
           <li>
-            <event-card></event-card>
+            <event-card-placeholder></event-card-placeholder>
           </li>
           <li>
+            <event-card-placeholder></event-card-placeholder>
+          </li>
+        </ul>
+        <ul ng-if="userVM.data.events.following" class="general-category__list">
+          <li ng-repeat="event in userVM.data.events.following">
             <event-card></event-card>
           </li>
         </ul>

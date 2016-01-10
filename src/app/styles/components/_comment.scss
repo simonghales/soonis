@@ -72,8 +72,13 @@
     color: $clr-medium-light;
     font-size: 14px;
 
-    &:hover {
-      color: $clr-dark;
+    a {
+
+      &:hover {
+        color: $clr-dark;
+        text-decoration: underline;
+      }
+
     }
 
   }

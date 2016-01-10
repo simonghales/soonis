@@ -23,8 +23,8 @@
       .state('user', {
         url: '/u/:id/:slug',
         templateUrl: 'app/user/user.html',
-        //controller: 'MainController',
-        //controllerAs: 'mainVM'
+        controller: 'UserController',
+        controllerAs: 'userVM'
       });
 
     $urlRouterProvider.otherwise('/');

@@ -1,7 +1,7 @@
 <div class="comment-structure">
   <div class="comment-structure__left">
     <div class="comment-form__thumb comment-structure__thumb" user-data="comment.author" show-user-hover="">
-      <a ui-sref="user({id: 'boop', slug: 'woop'})">
+      <a ng-href="#/u/{{::comment.author.id}}/{{::(comment.author.username | slugify)}}">
         <img ng-src="{{::comment.author.userprofile.avatar_image_urls.thumbnail}}" src="/assets/images/blank.png" alt="Event thumbnail" />
       </a>
     </div>
@@ -11,7 +11,7 @@
       <a class="username"
          user-data="comment.author"
          ng-bind="::comment.author.username"
-         ui-sref="user({id: 'boop', slug: 'woop'})"
+         ng-href="#/u/{{::comment.author.id}}/{{::(comment.author.username | slugify)}}"
          show-user-hover=""></a>
       <span>2 hours ago</span>
     </h4>
