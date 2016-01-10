@@ -1,22 +1,21 @@
 <div class="comment-structure">
   <div class="comment-structure__left">
-    <div class="comment-form__thumb comment-structure__thumb" show-user-hover="">
+    <div class="comment-form__thumb comment-structure__thumb" user-data="comment.author" show-user-hover="">
       <a ui-sref="user({id: 'boop', slug: 'woop'})">
-        <img ng-src="/assets/images/placeholder/me.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+        <img ng-src="{{::comment.author.userprofile.avatar_image_urls.thumbnail}}" src="/assets/images/blank.png" alt="Event thumbnail" />
       </a>
     </div>
   </div>
   <div class="comment-form__side comment-structure__side comment__body">
     <h4 class="comment__body__title">
-      <a class="username" ui-sref="user({id: 'boop', slug: 'woop'})" show-user-hover="">Simon Hales</a>
+      <a class="username"
+         user-data="comment.author"
+         ng-bind="::comment.author.username"
+         ui-sref="user({id: 'boop', slug: 'woop'})"
+         show-user-hover=""></a>
       <span>2 hours ago</span>
     </h4>
-    <p class="comment__body__message">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      Accusamus atque quasi veritatis. Doloremque, error, fuga.
-      Ab cum incidunt maxime numquam officiis ratione sed voluptatum!
-      Asperiores cupiditate excepturi inventore laborum nesciunt?
-    </p>
+    <p class="comment__body__message" data-ng-bind-html="::(comment.comment_text | linky)"></p>
     <div class="comment__body__options">
       <a ui-sref="user({id: 'boop', slug: 'woop'})">REPLY</a>
     </div>

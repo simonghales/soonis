@@ -1,4 +1,5 @@
 .date-hover {
+  @extend %fadeToggle;
   @extend %popup;
   @extend %popup__triangle;
 

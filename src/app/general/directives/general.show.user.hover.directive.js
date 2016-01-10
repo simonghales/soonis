@@ -9,7 +9,9 @@
 
     var directive = {
       restrict: 'A',
-      scope: false,
+      scope: {
+        userData: '='
+      },
       link: link
     }
 
@@ -50,8 +52,13 @@
           offset.left = offset.left + sideOffset;
 
           UserPopupService.setPosition(offset.left, offset.top);
+          var user = scope.userData;
+          if(user.plain) {
+            user = user.plain();
+          }
+          UserPopupService.setUser(user);
 
-          //$log.debug("offset", offset);
+          $log.debug("user", scope.userData);
 
           if(angular.element(document.querySelector('#user-hover-popup'))[0]) {
             $rootScope.$broadcast("user-hover-popup.display");

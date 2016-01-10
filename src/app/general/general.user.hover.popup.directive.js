@@ -22,6 +22,8 @@
       var hovered = false;
       var recentlyChangedState = false;
 
+      scope.user = null;
+
       _activate();
 
       function _activate() {
@@ -53,7 +55,7 @@
 
       function _display() {
 
-        scope.visible = true;
+        scope.user = UserPopupService.getUser();
 
         var offset = UserPopupService.getPosition();
         var windowWidth = $window.innerWidth;
@@ -71,6 +73,8 @@
           left: offset.x + 'px',
           right: 'auto'
         });
+
+        scope.visible = true;
 
       }
 

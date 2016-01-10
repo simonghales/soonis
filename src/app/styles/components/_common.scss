@@ -35,6 +35,13 @@
   background-color: $clr-cream;
   overflow: hidden;
 
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+  }
+
 }
 
 .thumb-and-info__info {

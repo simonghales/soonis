@@ -7,9 +7,7 @@
         <a class="when" ui-sref="event({id: 'boop', slug: 'woop'})">in 3 months</a>
       </div>
       <div class="title-wrapper">
-        <a class="title" ui-sref="event({id: 'boop', slug: 'woop'})">
-          EXOMARS Launch - ESA Mars orbiter and lander
-        </a>
+        <a class="title" ui-sref="event({id: 'boop', slug: 'woop'})" ng-bind="::eventVM.data.event.title"></a>
       </div>
       <button class="btn btn--main">
         Follow

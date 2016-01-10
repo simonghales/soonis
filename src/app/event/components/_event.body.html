@@ -3,20 +3,24 @@
     <aside class="event-aside">
       <section class="event-details">
         <div class="event-details__author">
-          <div class="thumb" show-user-hover="">
+          <div class="thumb" user-data="eventVM.data.event.author" show-user-hover="">
             <a ui-sref="user({id: 'boop', slug: 'woop'})">
-              <img ng-src="/assets/images/placeholder/me.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+              <img ng-src="{{::eventVM.data.event.author.userprofile.avatar_image_urls.thumbnail}}" src="/assets/images/blank.png" alt="Event thumbnail" />
             </a>
           </div>
           <div class="info">
             <h5 class="subtitle">Event Author</h5>
-            <a ui-sref="user({id: 'boop', slug: 'woop'})" class="title" show-user-hover="">Simon Hales</a>
+            <a ui-sref="user({id: 'boop', slug: 'woop'})"
+               class="title"
+               user-data="eventVM.data.event.author"
+               show-user-hover=""
+               ng-bind="::eventVM.data.event.author.username"></a>
           </div>
         </div>
         <ul class="event-details__list">
           <li>
             <span class="label">Posted in</span>
-            <span class="value">Space</span>
+            <span class="value" ng-bind="::eventVM.data.event.category_detail.name"></span>
           </li>
           <li>
             <span class="label">Created</span>
@@ -32,56 +36,13 @@
           </li>
         </ul>
       </section>
-      <section class="event-followers">
-        <header class="general-category__header">
-          <h3 class="general-category__header__title"><span>Followers</span></h3>
-          <a class="general-category__header__link" ng-click>SEE ALL</a>
-        </header>
-        <ul class="event-followers__list">
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-          <li>
-            <user-thumb></user-thumb>
-          </li>
-        </ul>
-      </section>
+      <event-followers id="eventVM.eventId"></event-followers>
     </aside>
     <section class="event-main">
       <section class="event-left">
         <div class="thumb-and-info">
           <div class="thumb-and-info__thumb">
-            <img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+            <img ng-src="{{::eventVM.data.event.profile_image_urls[0].thumbnail}}" src="/assets/images/blank.png" alt="Event thumbnail" />
           </div>
           <div class="thumb-and-info__info" show-date-hover="">
             <div class="thumb-and-info__title">in 3 months</div>
@@ -98,55 +59,48 @@
         </button>
       </section>
       <section class="event-centre">
-        <h2 class="heading heading--medium">EXOMARS Launch - ESA Mars orbiter and lander</h2>
-        <p class="text--medium">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Accusantium animi, architecto, aspernatur beatae culpa eius est fugiat hic ipsam itaque mollitia
-          nulla numquam obcaecati officiis rerum ullam unde!
-          <br/>
-          <br/>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem beatae blanditiis,
-          commodi consequatur corporis distinctio dolorem doloribus ducimus facere
-          laborum minus necessitatibus non nulla numquam quaerat quasi quisquam suscipit temporibus?
-          <br/>
-          Cum, laborum!
-        </p>
-        <ul class="list-thumbs">
-          <li>
-            <div class="thumb-general">
-              <img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
-            </div>
-          </li>
-          <li>
-            <div class="thumb-general">
-              <img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
-            </div>
-          </li>
-          <li>
-            <div class="thumb-general">
-              <img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
-            </div>
-          </li>
-          <li>
-            <div class="thumb-general">
-              <img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
-            </div>
-          </li>
-          <li>
-            <div class="thumb-general">
-              <img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
-            </div>
-          </li>
-          <li>
-            <div class="thumb-general">
-              <img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
-            </div>
-          </li>
-        </ul>
+        <section class="event-intro-text">
+          <h2 class="heading heading--medium">
+            <a href="" ng-bind="::eventVM.data.event.title"></a>
+          </h2>
+          <p class="text--medium white-space" data-ng-bind-html="::(eventVM.data.event.description | linky)"></p>
+        </section>
+        <!--<ul class="list-thumbs">-->
+          <!--<li>-->
+            <!--<div class="thumb-general">-->
+              <!--<img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="thumb-general">-->
+              <!--<img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="thumb-general">-->
+              <!--<img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="thumb-general">-->
+              <!--<img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="thumb-general">-->
+              <!--<img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />-->
+            <!--</div>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<div class="thumb-general">-->
+              <!--<img ng-src="/assets/images/placeholder/thumb-mars.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />-->
+            <!--</div>-->
+          <!--</li>-->
+        <!--</ul>-->
         <section class="comments-section">
           <header class="comments-section__header general-category__header">
             <h3 class="general-category__header__title"><span>Comments</span></h3>
-            <a class="general-category__header__link" ng-click>SEE ALL</a>
+            <!--<a class="general-category__header__link" ng-click>SEE ALL</a>-->
           </header>
           <div class="comment-form comment-structure">
             <div class="comment-structure__left">
@@ -162,19 +116,7 @@
             </div>
           </div>
           <ul class="comments-list">
-            <li>
-              <comment></comment>
-            </li>
-            <li>
-              <comment></comment>
-            </li>
-            <li>
-              <comment></comment>
-            </li>
-            <li>
-              <comment></comment>
-            </li>
-            <li>
+            <li ng-repeat="comment in eventVM.data.comments">
               <comment></comment>
             </li>
           </ul>

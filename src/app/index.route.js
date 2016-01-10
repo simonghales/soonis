@@ -17,8 +17,8 @@
       .state('event', {
         url: '/e/:id/:slug',
         templateUrl: 'app/event/event.page.html',
-        //controller: 'MainController',
-        //controllerAs: 'mainVM'
+        controller: 'EventController',
+        controllerAs: 'eventVM'
       })
       .state('user', {
         url: '/u/:id/:slug',

@@ -5,10 +5,10 @@
      class="user-hover-popup" ng-show="visible">
   <div class="user-thumb user-thumb--big">
     <a ui-sref="user({id: 'boop', slug: 'woop'})">
-      <img ng-src="/assets/images/placeholder/me2.jpg" src="/assets/images/blank.png" alt="Event thumbnail" />
+      <img ng-src="{{user.userprofile.avatar_image_urls.thumbnail}}" src="/assets/images/blank.png" alt="Event thumbnail" />
     </a>
   </div>
-  <a class="user-name" ui-sref="user({id: 'boop', slug: 'woop'})">Simon Hales</a>
+  <a class="user-name" ui-sref="user({id: 'boop', slug: 'woop'})" ng-bind="user.username"></a>
   <div class="options">
     <button class="btn btn--prominent btn--smaller">
       FOLLOW

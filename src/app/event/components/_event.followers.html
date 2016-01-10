@@ -1,0 +1,49 @@
+<section class="event-followers">
+  <header class="general-category__header">
+    <h3 class="general-category__header__title"><span>Followers</span></h3>
+    <!--<a class="general-category__header__link" ng-click>SEE ALL</a>-->
+  </header>
+  <ul ng-if="!followersVM.states.loaded" class="event-followers__list">
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+    <li>
+      <user-thumb-placeholder></user-thumb-placeholder>
+    </li>
+  </ul>
+  <ul ng-if="followersVM.states.loaded" class="event-followers__list">
+    <li ng-repeat="user in followersVM.data.users">
+      <user-thumb></user-thumb>
+    </li>
+  </ul>
+</section>

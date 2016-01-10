@@ -6,6 +6,7 @@
 
                       'soonis.general',
                       'soonis.event',
+                      'soonis.user',
 
                       'ngAnimate',
                       'ngCookies',

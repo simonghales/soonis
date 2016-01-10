@@ -13,10 +13,13 @@
       y: 0,
       alignLeft: true
     };
+    var _user = null;
 
     var service = {
       getPosition: getPosition,
-      setPosition: setPosition
+      getUser: getUser,
+      setPosition: setPosition,
+      setUser: setUser
     };
 
     return service;
@@ -25,11 +28,19 @@
       return _position;
     }
 
+    function getUser() {
+      return _user;
+    }
+
     function setPosition(x, y, alignRight) {
       _position.x = x;
       _position.y = y;
       if(alignRight) _position.alignLeft = false;
       else _position.alignLeft = true;
+    }
+
+    function setUser(user) {
+      _user = user;
     }
 
   }

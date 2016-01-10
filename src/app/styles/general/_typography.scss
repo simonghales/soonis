@@ -85,9 +85,19 @@ a {
   color: $clr-dark;
   font-size: 15px;
   line-height: 20px;
+
+  a {
+    @extend %link-hover;
+    color: $clr-anchor;
+  }
+
 }
 
 .text--sml--bold {
   color: $clr-dark;
   font-weight: bold;
+}
+
+.white-space {
+  white-space: pre-line;
 }

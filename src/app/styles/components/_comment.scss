@@ -62,6 +62,8 @@
   }
 
   .comment__body__message {
+    @extend .white-space;
+
     margin: 10px 0;
 
   }

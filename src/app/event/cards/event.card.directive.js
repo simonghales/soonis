@@ -10,6 +10,8 @@
     var directive = {
       restrict: 'E',
       templateUrl: 'app/event/cards/_event.card.html',
+      controller: 'EventCardController',
+      controllerAs: 'cardVM',
       replace: true,
       scope: false
     }

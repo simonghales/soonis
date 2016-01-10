@@ -19,6 +19,11 @@
 
   }
 
+  &.user-thumb--placeholder {
+    @include border-radius(50%);
+    background-color: $clr-lightcream;
+  }
+
 }
 
 .user-thumb--big {
