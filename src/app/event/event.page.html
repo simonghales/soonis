@@ -1,4 +1,7 @@
-<section class="page">
+<section class="page"
+         ng-class="{
+          'state--loading' : eventVM.states.loading
+         }">
   <site-header></site-header>
   <div ng-include="'app/event/components/_event.header.html'"></div>
   <div ng-include="'app/event/components/_event.body.html'"></div>

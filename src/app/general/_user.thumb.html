@@ -1,5 +1,5 @@
 <div class="user-thumb" user-data="user" show-user-hover="">
-  <a ui-sref="user({id: 'boop', slug: 'woop'})">
+  <a ng-href="#/u/{{user.id}}/{{(user.username | slugify)}}">
     <img ng-src="{{::user.userprofile.avatar_image_urls.thumbnail}}" src="/assets/images/blank.png" alt="Event thumbnail" />
   </a>
 </div>

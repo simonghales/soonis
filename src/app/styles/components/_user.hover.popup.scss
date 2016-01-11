@@ -26,6 +26,8 @@
 
   .user-name {
     @extend %link--medium;
+    @include text-truncate();
+    display: block;
   }
 
   .options {

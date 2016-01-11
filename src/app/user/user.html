@@ -2,7 +2,7 @@
 
   <site-header></site-header>
   <section class="big-display">
-    <div class="big-display__image" style="background-image:url(/assets/images/placeholder/event-mars.jpg);"></div>
+    <div class="big-display__image" style="background-image:url(/assets/images/placeholder/bg.jpg);"></div>
     <div class="big-display__underlay"></div>
     <div class="big-display__content">
       <div class="thumb-and-title">
@@ -11,13 +11,15 @@
             <img ng-src="{{userVM.data.user.userprofile.avatar_image_urls.thumbnail}}" src="/assets/images/blank.png" alt="thumbnail" />
           </a>
         </div>
-        <div class="thumb-and-title__title-wrapper">
-          <a class="thumb-and-title__title" href="" ng-bind="::userVM.data.user.username"></a>
+        <div>
+          <div class="thumb-and-title__title-wrapper">
+            <a class="thumb-and-title__title" href="" ng-bind="::userVM.data.user.username"></a>
+          </div>
+          <button class="btn btn--prominent btn--tiny">
+            FOLLOW
+            <span class="icon icon-star-empty"></span>
+          </button>
         </div>
-        <button class="btn btn--prominent btn--tiny">
-          FOLLOW
-          <span class="icon icon-star-empty"></span>
-        </button>
       </div>
     </div>
   </section>
@@ -31,8 +33,10 @@
           </a>
         </div>
         <div class="thumb-side-info__side">
-          <a ui-sref="user({id: 'boop', slug: 'woop'})"
-             class="thumb-side-info__title" ng-bind="::userVM.data.user.username"></a>
+          <div>
+            <a ui-sref="user({id: 'boop', slug: 'woop'})"
+               class="thumb-side-info__title" ng-bind="::userVM.data.user.username"></a>
+          </div>
           <button class="btn btn--prominent btn--tiny">
             FOLLOW
             <span class="icon icon-star-empty"></span>
@@ -45,73 +49,108 @@
       </section>
       <section class="user-list">
         <header class="general-category__header">
-          <h3 class="general-category__header__title"><span>Followers <span>(7)</span></span></h3>
-          <!--<a class="general-category__header__link" ng-click>SEE ALL</a>-->
+          <h3 class="general-category__header__title">
+            <span>Followers
+              <span ng-hide="userVM.states.users.followers.loading">
+                (<span ng-bind="::userVM.data.users.followers.meta.count"></span>)
+              </span>
+            </span>
+          </h3>
         </header>
-        <ul class="event-followers__list">
+        <ul ng-if="!userVM.states.users.followers.loaded" class="event-followers__list">
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
+            <user-thumb-placeholder></user-thumb-placeholder>
+          </li>
+          <li>
+            <user-thumb-placeholder></user-thumb-placeholder>
+          </li>
+          <li>
+            <user-thumb-placeholder></user-thumb-placeholder>
+          </li>
+          <li>
+            <user-thumb-placeholder></user-thumb-placeholder>
+          </li>
+          <li>
+            <user-thumb-placeholder></user-thumb-placeholder>
+          </li>
+          <li>
+            <user-thumb-placeholder></user-thumb-placeholder>
+          </li>
+        </ul>
+        <ul ng-if="userVM.states.users.followers.loaded" class="event-followers__list">
+          <li ng-repeat="user in userVM.data.users.followers">
             <user-thumb></user-thumb>
           </li>
         </ul>
       </section>
       <section class="user-list">
         <header class="general-category__header">
-          <h3 class="general-category__header__title"><span>Following <span>(42)</span></span></h3>
-          <!--<a class="general-category__header__link" ng-click>SEE ALL</a>-->
+          <h3 class="general-category__header__title">
+            <span>Following
+              <span ng-hide="userVM.states.users.following.loading">
+                (<span ng-bind="::userVM.data.users.following.meta.count"></span>)
+              </span>
+            </span>
+          </h3>
         </header>
-        <ul class="event-followers__list">
+        <ul ng-if="!userVM.states.users.following.loaded" class="event-followers__list">
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
-            <user-thumb></user-thumb>
+            <user-thumb-placeholder></user-thumb-placeholder>
           </li>
           <li>
+            <user-thumb-placeholder></user-thumb-placeholder>
+          </li>
+        </ul>
+        <ul ng-if="userVM.states.users.following.loaded" class="event-followers__list">
+          <li ng-repeat="user in userVM.data.users.following">
             <user-thumb></user-thumb>
           </li>
         </ul>

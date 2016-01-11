@@ -60,9 +60,16 @@
         .then(function(data) {
           $log.debug("loaded event", data);
           vm.data.event = data;
+
+          vm.states.loaded = true;
+          vm.states.loading = false;
           _loadComments();
         }, function(error) {
           $log.error("error", error);
+
+          vm.states.loaded = true;
+          vm.states.loading = false;
+          vm.states.error = true;
         });
     }
 

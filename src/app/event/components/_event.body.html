@@ -2,7 +2,7 @@
   <div class="site-maxwidth">
     <aside class="event-aside">
       <section class="event-details">
-        <div class="event-details__author">
+        <div class="event-details__author hide--loading">
           <div class="thumb" user-data="eventVM.data.event.author" show-user-hover="">
             <a ng-href="#/u/{{::eventVM.data.event.author.id}}/{{::(eventVM.data.event.author.username | slugify)}}">
               <img ng-src="{{::eventVM.data.event.author.userprofile.avatar_image_urls.thumbnail}}" src="/assets/images/blank.png" alt="Event thumbnail" />
@@ -17,7 +17,7 @@
                ng-bind="::eventVM.data.event.author.username"></a>
           </div>
         </div>
-        <ul class="event-details__list">
+        <ul class="event-details__list hide--loading">
           <li>
             <span class="label">Posted in</span>
             <span class="value" ng-bind="::eventVM.data.event.category_detail.name"></span>
@@ -36,7 +36,7 @@
           </li>
         </ul>
       </section>
-      <event-followers id="eventVM.eventId"></event-followers>
+      <event-followers id="eventVM.eventId" class="hide--loading"></event-followers>
     </aside>
     <section class="event-main">
       <section class="event-left">
@@ -44,22 +44,25 @@
           <div class="thumb-and-info__thumb">
             <img ng-src="{{::eventVM.data.event.profile_image_urls[0].thumbnail}}" src="/assets/images/blank.png" alt="Event thumbnail" />
           </div>
-          <div class="thumb-and-info__info" show-date-hover="">
+          <div class="thumb-and-info__info hide--loading m--visibility" show-date-hover="">
             <div class="thumb-and-info__title">in 3 months</div>
             <div class="thumb-and-info__subtitle">08/03/2015 2:00am</div>
           </div>
         </div>
-        <button class="btn btn--prominent">
-          FOLLOW
-          <span class="icon icon-star-empty"></span>
-        </button>
-        <button class="btn btn--prominent btn--lighter">
-          REMINDERS
-          <span class="icon icon-clock"></span>
-        </button>
+        <div class="hide--loading m--visibility">
+          <button class="btn btn--prominent">
+            FOLLOW
+            <span class="icon icon-star-empty"></span>
+          </button>
+          <button class="btn btn--prominent btn--lighter">
+            REMINDERS
+            <span class="icon icon-clock"></span>
+          </button>
+        </div>
       </section>
       <section class="event-centre">
         <section class="event-intro-text">
+          <h2 class="heading heading--medium show--loading">loading...</h2>
           <h2 class="heading heading--medium">
             <a href="" ng-bind="::eventVM.data.event.title"></a>
           </h2>
@@ -97,7 +100,7 @@
             <!--</div>-->
           <!--</li>-->
         <!--</ul>-->
-        <section class="comments-section">
+        <section class="comments-section hide--loading">
           <header class="comments-section__header general-category__header">
             <h3 class="general-category__header__title"><span>Comments</span></h3>
             <!--<a class="general-category__header__link" ng-click>SEE ALL</a>-->

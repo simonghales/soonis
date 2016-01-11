@@ -1,18 +1,26 @@
 <section class="event-header">
   <section class="event-major-preview__display"
-           style="background-image:url(/assets/images/placeholder/event-mars.jpg);">
+           back-img="{{eventVM.data.event.banner_image_urls[0].original}}"
+           >
     <div class="underlay"></div>
     <div class="content">
-      <div class="when-wrapper">
-        <a class="when" ui-sref="event({id: 'boop', slug: 'woop'})">in 3 months</a>
+      <div class="show--loading">
+        <div class="title-wrapper">
+          <div class="title">loading...</div>
+        </div>
       </div>
-      <div class="title-wrapper">
-        <a class="title" ui-sref="event({id: 'boop', slug: 'woop'})" ng-bind="::eventVM.data.event.title"></a>
+      <div class="hide--loading">
+        <div class="when-wrapper">
+          <a class="when" ui-sref="event({id: 'boop', slug: 'woop'})">in 3 months</a>
+        </div>
+        <div class="title-wrapper">
+          <a class="title" ui-sref="event({id: 'boop', slug: 'woop'})" ng-bind="::eventVM.data.event.title"></a>
+        </div>
+        <button class="btn btn--main">
+          Follow
+          <span class="icon icon-star-empty"></span>
+        </button>
       </div>
-      <button class="btn btn--main">
-        Follow
-        <span class="icon icon-star-empty"></span>
-      </button>
     </div>
   </section>
 </section>

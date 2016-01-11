@@ -38,6 +38,18 @@
           loading: true,
           loaded: false
         }
+      },
+      users: {
+        followers: {
+          error: false,
+          loading: true,
+          loaded: false
+        },
+        following: {
+          error: false,
+          loading: true,
+          loaded: false
+        }
       }
     }
 
@@ -101,6 +113,7 @@
           $log.debug("loaded user", data);
 
           _loadEvents();
+          _loadUsers();
 
           vm.data.user = data;
           vm.states.loaded = true;
@@ -112,6 +125,49 @@
           vm.states.error = true;
         });
 
+    }
+
+    function _loadUsers() {
+      _loadUsersFollowers();
+      _loadUsersFollowing();
+    }
+
+    function _loadUsersFollowers() {
+      UserService.getList({
+        followed_by_user: vm.userId,
+        limit: 100,
+      })
+        .then(function(data) {
+          $log.debug("loaded user followers", data);
+          vm.data.users.followers = data;
+
+          vm.states.users.followers.loaded = true;
+          vm.states.users.followers.loading = false;
+        }, function(error) {
+          $log.error("error", error);
+          vm.states.users.followers.loaded = true;
+          vm.states.users.followers.loading = false;
+          vm.states.users.followers.error = true;
+        });
+    }
+
+    function _loadUsersFollowing() {
+      UserService.getList({
+        following_user: vm.userId,
+        limit: 100,
+      })
+        .then(function(data) {
+          $log.debug("loaded users following", data);
+          vm.data.users.following = data;
+
+          vm.states.users.following.loaded = true;
+          vm.states.users.following.loading = false;
+        }, function(error) {
+          $log.error("error", error);
+          vm.states.users.following.loaded = true;
+          vm.states.users.following.loading = false;
+          vm.states.users.following.error = true;
+        });
     }
 
   }
